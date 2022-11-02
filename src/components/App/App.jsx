@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import LoggedInContext from '../../contexts/LoggedInContext';
@@ -8,7 +8,8 @@ import Main from '../../pages/Main';
 import './App.css';
 
 function App() {
-  const { isLoggedIn, setIsLoggedIn } = useContext(LoggedInContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const loggedInValue = useMemo(() => ({ isLoggedIn, setIsLoggedIn }), [isLoggedIn, setIsLoggedIn]);
 
   return (

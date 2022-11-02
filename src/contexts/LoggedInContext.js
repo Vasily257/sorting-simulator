@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 const LoggedInContext = createContext({
-  isLoggedIn: {},
+  isLoggedIn: false,
   setIsLoggedIn: () => {},
 });
 
