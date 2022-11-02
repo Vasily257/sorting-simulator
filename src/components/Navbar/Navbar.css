@@ -1,3 +1,48 @@
 .navbar {
   position: relative;
 }
+
+.navbar__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navbar__item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  margin-right: 10px;
+}
+
+.navbar__item:last-child {
+  margin-right: 0;
+}
+
+.navbar__link {
+  position: relative;
+
+  color: inherit;
+
+  font-weight: 500;
+}
+
+.navbar__link_active::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+
+  content: '';
+
+  border-bottom: 1px solid var(--green-color);
+}
