@@ -27,6 +27,6 @@
 }
 
 .custom-button:focus-visible {
-  outline: 3px solid var(blue);
+  outline: 3px solid var(--blue-color);
   outline-offset: 3px;
 }
