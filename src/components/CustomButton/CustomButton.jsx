@@ -33,7 +33,7 @@ CustomButton.defaultProps = {
   onClick: () => {},
   ariaLabel: '',
   disabled: false,
-  children: '',
+  children: '' || null,
 };
 
 export default CustomButton;
