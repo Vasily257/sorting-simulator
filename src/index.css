@@ -8,14 +8,6 @@ body {
 
   margin: 0;
 
-  color: var(--color-dark);
-  background-color: #ffffff;
-
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 1;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

@@ -5,6 +5,14 @@
   min-width: 320px;
   height: 100vh;
   padding: 20px 20px;
+
+  color: var(--color-dark);
+  background-color: #ffffff;
+
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
 }
 
 @media screen and (min-width: 600px) {
@@ -16,5 +24,7 @@
 @media screen and (min-width: 900px) {
   .app {
     padding: 20px 60px;
+
+    font-size: 14px;
   }
 }
