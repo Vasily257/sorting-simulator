@@ -40,7 +40,7 @@ CustomLink.propTypes = {
   onClick: PropTypes.func,
   target: PropTypes.string,
   ariaLabel: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 CustomLink.defaultProps = {
@@ -48,6 +48,7 @@ CustomLink.defaultProps = {
   target: '_blank',
   activeClassName: '',
   ariaLabel: '',
+  children: '' || null,
 };
 
 export default CustomLink;
