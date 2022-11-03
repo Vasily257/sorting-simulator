@@ -1,0 +1,68 @@
+.button-link {
+  padding: 5px 10px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--dark-color);
+  border-radius: 12px;
+}
+
+/* Profile button */
+
+.button-link_type_profile::before {
+  display: inline-block;
+
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+
+  content: '';
+
+  background-image: url('../../images/profile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.button-link_type_profile-active {
+  border-color: var(--green-color);
+}
+
+.button-link_type_profile-active::before {
+  background-image: url('../../images/profile-active.svg');
+}
+
+/* Register button */
+
+.button-link_type_register-active {
+  border-color: var(--green-color);
+}
+
+/* Login button */
+
+.button-link_type_login {
+  color: #ffffff;
+  border-color: var(--blue-color);
+  background-color: var(--blue-color);
+}
+
+.button-link_type_login-active {
+  color: inherit;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 900px) {
+  .button-link::before {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .button-link {
+    padding: 7px 14px;
+
+    border-radius: 15px;
+  }
+}
