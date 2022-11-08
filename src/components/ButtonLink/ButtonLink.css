@@ -1,20 +1,18 @@
 .button-link {
-  padding: 8px 16px;
+  padding: 0.75em 1.5em;
 
   border-width: 1px;
   border-style: solid;
   border-color: var(--dark-color);
-  border-radius: 15px;
+  border-radius: 1.5em;
 }
-
-/* Profile button */
 
 .button-link_type_profile::before {
   display: inline-block;
 
-  width: 10px;
-  height: 10px;
-  margin-right: 4px;
+  width: 0.75em;
+  height: 0.75em;
+  margin-right: 0.25em;
 
   content: '';
 
@@ -32,13 +30,9 @@
   background-image: url('../../images/profile-active.svg');
 }
 
-/* Register button */
-
 .button-link_type_register-active {
   border-color: var(--green-color);
 }
-
-/* Login button */
 
 .button-link_type_login {
   color: #ffffff;
@@ -49,20 +43,4 @@
 .button-link_type_login-active {
   color: inherit;
   background-color: transparent;
-}
-
-@media screen and (min-width: 900px) {
-  .button-link::before {
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .button-link {
-    padding: 10px 20px;
-
-    border-radius: 18px;
-  }
 }
