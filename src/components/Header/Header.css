@@ -57,6 +57,18 @@
   padding: 0;
 }
 
+.header__menu-button {
+  position: fixed;
+  top: calc(20px + 13px);
+  right: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .header__menu-button {
+    right: 40px;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .header__navigation {
     position: relative;

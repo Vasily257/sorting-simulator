@@ -6,11 +6,10 @@ import useScreenView from '../../hooks/useScreenView';
 
 import CustomLink from '../CustomLink/CustomLink';
 import ButtonLink from '../ButtonLink/ButtonLink';
-import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 
 import './HeaderNavigation.css';
 
-function HeaderNavigation({ сlassNameFromParent, isMenuOpened, setIsMenuOpened }) {
+function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop, isTablet, isMobile } = useScreenView();
 
@@ -90,7 +89,6 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened, setIsMenuOpened 
           </ul>
         </nav>
       )}
-      <HeaderMenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
     </>
   );
 }
@@ -98,7 +96,6 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened, setIsMenuOpened 
 HeaderNavigation.propTypes = {
   сlassNameFromParent: PropTypes.string.isRequired,
   isMenuOpened: PropTypes.bool.isRequired,
-  setIsMenuOpened: PropTypes.func.isRequired,
 };
 
 export default HeaderNavigation;

@@ -8,7 +8,7 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import './HeaderMenuButton.css';
 
-function HeaderMenuButton({ isMenuOpened, setIsMenuOpened }) {
+function HeaderMenuButton({ сlassNameFromParent, isMenuOpened, setIsMenuOpened }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop } = useScreenView();
 
@@ -22,7 +22,9 @@ function HeaderMenuButton({ isMenuOpened, setIsMenuOpened }) {
     isLoggedIn
     && !isDesktop && (
       <CustomButton
-        className={`header-menu-button ${isMenuOpened ? 'header-menu-button_opened ' : ''}`}
+        className={`${сlassNameFromParent} header-menu-button ${
+          isMenuOpened ? 'header-menu-button_opened' : ''
+        }`}
         onClick={() => {
           setIsMenuOpened(!isMenuOpened);
         }}
@@ -33,6 +35,7 @@ function HeaderMenuButton({ isMenuOpened, setIsMenuOpened }) {
 }
 
 HeaderMenuButton.propTypes = {
+  сlassNameFromParent: PropTypes.string.isRequired,
   isMenuOpened: PropTypes.bool.isRequired,
   setIsMenuOpened: PropTypes.func.isRequired,
 };
