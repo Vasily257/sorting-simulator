@@ -1,4 +1,4 @@
-@keyframes identifier {
+@keyframes smooth-appearance {
   from {
     opacity: 0;
   }
@@ -11,7 +11,7 @@
 .header-navigation {
   position: relative;
 
-  animation-name: identifier;
+  animation-name: smooth-appearance;
   animation-duration: 0.25s;
 
   opacity: 1;
@@ -61,9 +61,6 @@
   content: '';
 
   border-bottom: 1px solid var(--green-color);
-}
-
-@media screen and (min-width: 600px) {
 }
 
 @media screen and (min-width: 900px) {
