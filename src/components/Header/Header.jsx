@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import HeaderBar from '../HeaderBar/HeaderBar';
-import HeaderMenu from '../HeaderMenu/HeaderMenu';
+import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
+import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 
 import headerLogoUrl from '../../images/header-logo.svg';
 
@@ -11,10 +11,10 @@ function Header() {
   const [isMenuOpened, setIsMenuOPened] = useState(false);
 
   return (
-    <header className="header">
+    <header className={`header ${isMenuOpened ? 'header_overlay' : ''}`}>
       <img className="header__logo" src={headerLogoUrl} alt="Логотип сайта" />
-      <HeaderBar />
-      <HeaderMenu isMenuOpened={isMenuOpened} setIsMenuOPened={setIsMenuOPened} />
+      <HeaderNavigation сlassNameFromParent="header__navigation" isMenuOpened={isMenuOpened} />
+      <HeaderMenuButton isMenuOpened={isMenuOpened} setIsMenuOPened={setIsMenuOPened} />
     </header>
   );
 }

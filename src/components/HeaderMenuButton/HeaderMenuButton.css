@@ -1,9 +1,8 @@
-.header-menu {
+.header-menu-button {
   position: relative;
 
   width: 24px;
   height: 24px;
-  margin-left: 5px;
 
   transition: opacity 0.5s, border-top 0.25s, border-bottom 0.25s;
 
@@ -12,13 +11,13 @@
   border-bottom: 3px solid black;
 }
 
-.header-menu:hover {
+.header-menu-button:hover {
   transition: opacity 0.1s, border-top 0.25s, border-bottom 0.25s;
 
   opacity: 0.7;
 }
 
-.header-menu::before, .header-menu::after {
+.header-menu-button::before, .header-menu-button::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,25 +31,25 @@
   background-color: black;
 }
 
-.header-menu::before {
+.header-menu-button::before {
   transform: translate(0, 4px);
 }
 
-.header-menu::after {
+.header-menu-button::after {
   transform: translate(0, 11px);
 }
 
-.header-menu_opened {
+.header-menu-button_opened {
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
 }
 
-.header-menu_opened::before {
+.header-menu-button_opened::before {
   transition: transform 0.5s;
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.header-menu_opened::after {
+.header-menu-button_opened::after {
   transition: transform 0.5s;
   transform: rotate(-45deg) translate(-5px, 5px);
 }
