@@ -6,93 +6,99 @@ import useScreenView from '../../hooks/useScreenView';
 
 import CustomLink from '../CustomLink/CustomLink';
 import ButtonLink from '../ButtonLink/ButtonLink';
+import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 
 import './HeaderNavigation.css';
 
-function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
+function HeaderNavigation({ сlassNameFromParent, isMenuOpened, setIsMenuOpened }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop, isTablet, isMobile } = useScreenView();
 
+  const isNavbarShown = isDesktop || (isMenuOpened && (isTablet || isMobile));
+
   return (
-    (isDesktop || (isMenuOpened && (isTablet || isMobile))) && (
-      <nav className={`${сlassNameFromParent} header-navigation`}>
-        <ul className="header-navigation__list">
-          {isLoggedIn ? (
-            <>
-              <li className="header-navigation__item">
-                <CustomLink
-                  path="/"
-                  className="header-navigation__link"
-                  activeClassName="header-navigation__link_active"
-                >
-                  Главная
-                </CustomLink>
-              </li>
-              <li className="header-navigation__item">
-                <CustomLink
-                  path="/simulator"
-                  className="header-navigation__link"
-                  activeClassName="header-navigation__link_active"
-                >
-                  Тренажёр
-                </CustomLink>
-              </li>
-              <li className="header-navigation__item">
-                <CustomLink
-                  path="/memos"
-                  className="header-navigation__link"
-                  activeClassName="header-navigation__link_active"
-                >
-                  Памятки
-                </CustomLink>
-              </li>
-              <li className="header-navigation__item">
-                <CustomLink
-                  path="/catalog"
-                  className="header-navigation__link"
-                  activeClassName="header-navigation__link_active"
-                >
-                  Справочник
-                </CustomLink>
-              </li>
-              <li className="header-navigation__item">
-                <ButtonLink
-                  path="/profile"
-                  className="header-navigation__link"
-                  type="profile"
-                  text="Профиль"
-                />
-              </li>
-            </>
-          ) : (
-            <>
-              <li className="header-navigation__item">
-                <ButtonLink
-                  path="/signup"
-                  className="header-navigation__link"
-                  type="register"
-                  text="Регистрация"
-                />
-              </li>
-              <li className="header-navigation__item">
-                <ButtonLink
-                  path="/signin"
-                  className="header-navigation__link"
-                  type="login"
-                  text="Вход"
-                />
-              </li>
-            </>
-          )}
-        </ul>
-      </nav>
-    )
+    <>
+      {isLoggedIn && isNavbarShown && (
+        <nav className={`${сlassNameFromParent} header-navigation`}>
+          <ul className="header-navigation__list">
+            <li className="header-navigation__item">
+              <CustomLink
+                path="/"
+                className="header-navigation__link"
+                activeClassName="header-navigation__link_active"
+              >
+                Главная
+              </CustomLink>
+            </li>
+            <li className="header-navigation__item">
+              <CustomLink
+                path="/simulator"
+                className="header-navigation__link"
+                activeClassName="header-navigation__link_active"
+              >
+                Тренажёр
+              </CustomLink>
+            </li>
+            <li className="header-navigation__item">
+              <CustomLink
+                path="/memos"
+                className="header-navigation__link"
+                activeClassName="header-navigation__link_active"
+              >
+                Памятки
+              </CustomLink>
+            </li>
+            <li className="header-navigation__item">
+              <CustomLink
+                path="/catalog"
+                className="header-navigation__link"
+                activeClassName="header-navigation__link_active"
+              >
+                Справочник
+              </CustomLink>
+            </li>
+            <li className="header-navigation__item">
+              <ButtonLink
+                path="/profile"
+                className="header-navigation__link"
+                type="profile"
+                text="Профиль"
+              />
+            </li>
+          </ul>
+        </nav>
+      )}
+      {!isLoggedIn && (
+        <nav className={`${сlassNameFromParent} header-navigation`}>
+          <ul className="header-navigation__list">
+            <li className="header-navigation__item">
+              <ButtonLink
+                path="/signup"
+                className="header-navigation__link"
+                type="register"
+                text="Регистрация"
+              />
+            </li>
+            <li className="header-navigation__item">
+              <ButtonLink
+                path="/signin"
+                className="header-navigation__link"
+                type="login"
+                text="Вход"
+              />
+            </li>
+          </ul>
+        </nav>
+      )}
+      <HeaderMenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
+    </>
   );
 }
 
 HeaderNavigation.propTypes = {
   сlassNameFromParent: PropTypes.string.isRequired,
   isMenuOpened: PropTypes.bool.isRequired,
+  setIsMenuOpened: PropTypes.func.isRequired,
 };
 
 export default HeaderNavigation;

@@ -8,15 +8,15 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import './HeaderMenuButton.css';
 
-function HeaderMenuButton({ isMenuOpened, setIsMenuOPened }) {
+function HeaderMenuButton({ isMenuOpened, setIsMenuOpened }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop } = useScreenView();
 
   useEffect(() => {
     if (isDesktop) {
-      setIsMenuOPened(false);
+      setIsMenuOpened(false);
     }
-  }, [isDesktop, setIsMenuOPened]);
+  }, [isDesktop, setIsMenuOpened]);
 
   return (
     isLoggedIn
@@ -24,7 +24,7 @@ function HeaderMenuButton({ isMenuOpened, setIsMenuOPened }) {
       <CustomButton
         className={`header-menu-button ${isMenuOpened ? 'header-menu-button_opened ' : ''}`}
         onClick={() => {
-          setIsMenuOPened(!isMenuOpened);
+          setIsMenuOpened(!isMenuOpened);
         }}
         ariaLabel={isMenuOpened ? 'Закрыть меню' : 'Открыть меню'}
       />
@@ -34,7 +34,7 @@ function HeaderMenuButton({ isMenuOpened, setIsMenuOPened }) {
 
 HeaderMenuButton.propTypes = {
   isMenuOpened: PropTypes.bool.isRequired,
-  setIsMenuOPened: PropTypes.func.isRequired,
+  setIsMenuOpened: PropTypes.func.isRequired,
 };
 
 export default HeaderMenuButton;
