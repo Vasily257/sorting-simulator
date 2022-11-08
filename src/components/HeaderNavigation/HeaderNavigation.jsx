@@ -69,20 +69,20 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened, setIsMenuOpened 
         </nav>
       )}
       {!isLoggedIn && (
-        <nav className={`${сlassNameFromParent} header-navigation`}>
-          <ul className="header-navigation__list">
-            <li className="header-navigation__item">
+        <nav className={`${сlassNameFromParent} header-navigation header-navigation_type_signbar`}>
+          <ul className="header-navigation__list header-navigation__list_type_signbar">
+            <li className="header-navigation__item header-navigation__item_type_signbar">
               <ButtonLink
                 path="/signup"
-                className="header-navigation__link"
+                className="header-navigation__link header-navigation__link_type_signbar"
                 type="register"
                 text="Регистрация"
               />
             </li>
-            <li className="header-navigation__item">
+            <li className="header-navigation__item header-navigation__item_type_signbar">
               <ButtonLink
                 path="/signin"
-                className="header-navigation__link"
+                className="header-navigation__link header-navigation__link_type_signbar"
                 type="login"
                 text="Вход"
               />

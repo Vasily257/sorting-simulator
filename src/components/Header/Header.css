@@ -50,6 +50,13 @@
   border-radius: 0 0 10px 10px;
 }
 
+.header__navigation_type_signbar {
+  position: relative;
+
+  max-width: max-content;
+  padding: 0;
+}
+
 @media screen and (min-width: 900px) {
   .header__navigation {
     position: relative;

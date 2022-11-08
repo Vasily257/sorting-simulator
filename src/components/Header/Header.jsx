@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import LoggedInContext from '../../contexts/LoggedInContext';
 
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 
@@ -8,12 +10,15 @@ import './Header.css';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const { isLoggedIn } = useContext(LoggedInContext);
 
   return (
     <header className={`header ${isMenuOpened ? 'header_overlay' : ''}`}>
       <img className="header__logo" src={headerLogoUrl} alt="Логотип сайта" />
       <HeaderNavigation
-        сlassNameFromParent="header__navigation"
+        сlassNameFromParent={`header__navigation ${
+          !isLoggedIn ? 'header__navigation_type_signbar' : ''
+        } `}
         isMenuOpened={isMenuOpened}
         setIsMenuOpened={setIsMenuOpened}
       />
