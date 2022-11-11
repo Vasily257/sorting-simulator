@@ -1,4 +1,4 @@
-# React Mesto Api Full  
+# Sorting Simulator 
 A personal web project for VNB Samara — this is a social movement that accepts recyclables and transfers the money received to charity.
 The web project includes some sections:
 - the description of the movement
