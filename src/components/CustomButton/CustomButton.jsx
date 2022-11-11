@@ -4,11 +4,19 @@ import PropTypes from 'prop-types';
 import './CustomButton.css';
 
 function CustomButton({
-  className, isSubmitButton, onClick, ariaLabel, disabled, children,
+  className,
+  isSubmitButton,
+  isClassicStyle,
+  onClick,
+  ariaLabel,
+  disabled,
+  children,
 }) {
   return (
     <button
-      className={`custom-button ${className}`}
+      className={`custom-button ${
+        isClassicStyle ? 'custom-button_style_classic' : ''
+      } ${className}`}
       type={isSubmitButton ? 'submit' : 'button'}
       onClick={onClick}
       aria-label={ariaLabel}
@@ -20,8 +28,9 @@ function CustomButton({
 }
 
 CustomButton.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   isSubmitButton: PropTypes.bool,
+  isClassicStyle: PropTypes.bool,
   onClick: PropTypes.func,
   ariaLabel: PropTypes.string,
   disabled: PropTypes.bool,
@@ -29,7 +38,9 @@ CustomButton.propTypes = {
 };
 
 CustomButton.defaultProps = {
+  className: '',
   isSubmitButton: false,
+  isClassicStyle: false,
   onClick: () => {},
   ariaLabel: '',
   disabled: false,
