@@ -10,6 +10,7 @@
 }
 
 .promo__title {
+  max-width: 300px;
   margin: 0;
   padding: 0;
 
@@ -24,8 +25,6 @@
 
 .promo__picture-wrapper {
   display: block;
-
-  max-width: 400px;
 }
 
 .promo__picture {
@@ -75,6 +74,8 @@
     grid-column: 1/2;
     grid-row: 1/2;
 
+    max-width: 400px;
+
     text-align: left;
 
     font-size: 25px;
@@ -83,6 +84,8 @@
   .promo__picture-wrapper {
     grid-column: 2/3;
     grid-row: 1/4;
+
+    max-width: 300px;
   }
 
   .promo__picture {
@@ -107,9 +110,11 @@
 
 @media screen and (min-width: 900px) {
   .promo__title {
-    max-width: 400px;
-
     font-size: 30px;
+  }
+
+  .promo__picture-wrapper {
+    max-width: 400px;
   }
 
   .promo__subtitle {

@@ -1,10 +1,15 @@
 .header {
   position: relative;
+  z-index: 1;
 
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--regular-grey-color);
 }
 
 .header::before {
@@ -33,7 +38,7 @@
 
 .header__logo {
   width: auto;
-  height: 50px;
+  height: 32px;
   margin-right: auto;
 }
 
@@ -58,18 +63,26 @@
 }
 
 .header__menu-button {
+  position: relative;
+}
+
+.header__menu-button_opened {
   position: fixed;
-  top: calc(20px + 13px);
+  top: calc(20px + 4px);
   right: 20px;
 }
 
 @media screen and (min-width: 600px) {
-  .header__menu-button {
+  .header__menu-button_opened {
     right: 40px;
   }
 }
 
 @media screen and (min-width: 900px) {
+  .header__logo {
+    height: 37px;
+  }
+
   .header__navigation {
     position: relative;
 

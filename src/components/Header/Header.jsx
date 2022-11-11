@@ -23,7 +23,9 @@ function Header() {
         isMenuOpened={isMenuOpened}
       />
       <HeaderMenuButton
-        сlassNameFromParent="header__menu-button"
+        сlassNameFromParent={`header__menu-button ${
+          isMenuOpened ? 'header__menu-button_opened' : ''
+        }`}
         isMenuOpened={isMenuOpened}
         setIsMenuOpened={setIsMenuOpened}
       />
