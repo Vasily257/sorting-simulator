@@ -5,6 +5,7 @@
 
 body {
   position: relative;
+  background-color: var(--light-grey-color);
 
   margin: 0;
 
