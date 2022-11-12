@@ -1,13 +1,18 @@
+@import url(../src/utils/styles/custom-properties.css);
+@import url(../src/utils/styles/visually-hidden.css);
+@import url(../src/utils/styles/fonts.css);
+@import url(../src/vendor/normalize.css);
+
 body {
+  position: relative;
+  background-color: var(--light-grey-color);
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }

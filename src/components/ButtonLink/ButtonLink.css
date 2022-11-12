@@ -1,0 +1,46 @@
+.button-link {
+  padding: 0.75em 1.5em;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--dark-color);
+  border-radius: 1.5em;
+}
+
+.button-link_type_profile::before {
+  display: inline-block;
+
+  width: 0.75em;
+  height: 0.75em;
+  margin-right: 0.25em;
+
+  content: '';
+
+  background-image: url('../../images/profile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.button-link_type_profile-active {
+  border-color: var(--green-color);
+}
+
+.button-link_type_profile-active::before {
+  background-image: url('../../images/profile-active.svg');
+}
+
+.button-link_type_register-active {
+  border-color: var(--green-color);
+}
+
+.button-link_type_login {
+  color: #ffffff;
+  border-color: var(--blue-color);
+  background-color: var(--blue-color);
+}
+
+.button-link_type_login-active {
+  color: inherit;
+  background-color: transparent;
+}
