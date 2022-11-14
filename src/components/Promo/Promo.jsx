@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Section from '../Section/Section';
 import CustomButton from '../CustomButton/CustomButton';
 
 import promoPictureWebp from '../../images/promo/promo-image.webp';
@@ -9,7 +10,7 @@ import './Promo.css';
 
 function Promo() {
   return (
-    <section className="promo">
+    <Section classNameFromChild="promo">
       <h1 className="promo__title">Вторсырьё на&nbsp;благотворительность</h1>
       <picture className="promo__picture-wrapper">
         <source srcSet={promoPictureWebp} />
@@ -26,7 +27,7 @@ function Promo() {
       <CustomButton className="button promo__button" isClassicStyle>
         Узнать больше
       </CustomButton>
-    </section>
+    </Section>
   );
 }
 
