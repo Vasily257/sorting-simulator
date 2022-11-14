@@ -1,7 +1,7 @@
 .promo {
   display: grid;
   justify-items: center;
-  row-gap: 20px;
+  row-gap: 40px;
   grid-template-columns: auto;
 
   color: var(--dark-color);
