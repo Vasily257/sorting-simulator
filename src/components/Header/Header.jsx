@@ -14,7 +14,7 @@ function Header() {
   const { isLoggedIn } = useContext(LoggedInContext);
 
   return (
-    <header className={`header ${isMenuOpened ? 'header_overlay' : ''}`}>
+    <header className={`header header_position_standart ${isMenuOpened ? 'header_overlay' : ''}`}>
       <img className="header__logo" src={headerLogoUrl} alt="Логотип сайта" />
       <HeaderNavigation
         сlassNameFromParent={`header__navigation ${
@@ -23,9 +23,7 @@ function Header() {
         isMenuOpened={isMenuOpened}
       />
       <HeaderMenuButton
-        сlassNameFromParent={`header__menu-button ${
-          isMenuOpened ? 'header__menu-button_opened' : ''
-        }`}
+        сlassNameFromParent="header__menu-button"
         isMenuOpened={isMenuOpened}
         setIsMenuOpened={setIsMenuOpened}
       />
