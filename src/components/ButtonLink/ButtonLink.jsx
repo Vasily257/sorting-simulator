@@ -11,13 +11,10 @@ function ButtonLink({
   path, className, type, text,
 }) {
   const { typeClassName, typeActiveClassName } = getTypeClassName(type);
+  const finalClassName = `button-link ${typeClassName} ${className} `;
 
   return (
-    <CustomLink
-      path={path}
-      className={`button-link ${typeClassName} ${className} `}
-      activeClassName={typeActiveClassName}
-    >
+    <CustomLink path={path} className={finalClassName} activeClassName={typeActiveClassName}>
       {text}
     </CustomLink>
   );

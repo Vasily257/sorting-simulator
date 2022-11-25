@@ -13,13 +13,16 @@ function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const { isLoggedIn } = useContext(LoggedInContext);
 
+  const finalClassName = `header header_position_standart ${isMenuOpened ? 'header_overlay' : ''}`;
+  const finalNavigationClassName = `header__navigation ${
+    !isLoggedIn ? 'header__navigation_type_signbar' : ''
+  } `;
+
   return (
-    <header className={`header header_position_standart ${isMenuOpened ? 'header_overlay' : ''}`}>
+    <header className={finalClassName}>
       <img className="header__logo" src={headerLogoUrl} alt="Логотип сайта" />
       <HeaderNavigation
-        сlassNameFromParent={`header__navigation ${
-          !isLoggedIn ? 'header__navigation_type_signbar' : ''
-        } `}
+        сlassNameFromParent={finalNavigationClassName}
         isMenuOpened={isMenuOpened}
       />
       <HeaderMenuButton

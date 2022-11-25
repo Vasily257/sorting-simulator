@@ -12,6 +12,10 @@ function HeaderMenuButton({ сlassNameFromParent, isMenuOpened, setIsMenuOpened 
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop } = useScreenView();
 
+  const finalClassName = `${сlassNameFromParent} header-menu-button ${
+    isMenuOpened ? 'header-menu-button_opened' : ''
+  }`;
+
   useEffect(() => {
     if (isDesktop) {
       setIsMenuOpened(false);
@@ -22,9 +26,7 @@ function HeaderMenuButton({ сlassNameFromParent, isMenuOpened, setIsMenuOpened 
     isLoggedIn
     && !isDesktop && (
       <CustomButton
-        className={`${сlassNameFromParent} header-menu-button ${
-          isMenuOpened ? 'header-menu-button_opened' : ''
-        }`}
+        className={finalClassName}
         onClick={() => {
           setIsMenuOpened(!isMenuOpened);
         }}
