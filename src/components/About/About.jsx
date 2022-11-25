@@ -1,34 +1,23 @@
 import React from 'react';
 
 import Section from '../Section/Section';
-
 import SectionTitle from '../SectionTitle/SectionTitle';
+
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 import './About.css';
 
 function About() {
   return (
     <Section classNameFromChild="about">
-      <SectionTitle classNameFromParent="about__title" text="О проекте" />
+      <SectionTitle classNameFromParent="about__title" text={TEXT_CONTENT.ABOUT.TITLE} />
       <ul className="about__list">
-        <li className="about__item">
-          <h3 className="about__subtitle">Что за проект</h3>
-          <p className="about__description">Hекоммерческий волонтерский проект.</p>
-        </li>
-        <li className="about__item">
-          <h3 className="about__subtitle">Зачем нужен проект</h3>
-          <p className="about__description">
-            Распространять культуру раздельного сбора отходов и&nbsp;финансировать благотворительные
-            организации.
-          </p>
-        </li>
-        <li className="about__item">
-          <h3 className="about__subtitle">Кто участвует в проекте</h3>
-          <p className="about__description">
-            Жители Самарской области, которые могут прийти на&nbsp;акцию и&nbsp;сдать
-            отсортированные отходы.
-          </p>
-        </li>
+        {TEXT_CONTENT.ABOUT.ITEMS.map(({ ID, SUBTITLE, DESCRIPTION }) => (
+          <li key={ID} className="about__item">
+            <h3 className="about__subtitle">{SUBTITLE}</h3>
+            <p className="about__description">{DESCRIPTION}</p>
+          </li>
+        ))}
       </ul>
     </Section>
   );

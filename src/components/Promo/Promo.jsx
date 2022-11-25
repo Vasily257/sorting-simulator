@@ -5,6 +5,8 @@ import useScreenView from '../../hooks/useScreenView';
 import Section from '../Section/Section';
 import CustomButton from '../CustomButton/CustomButton';
 
+import TEXT_CONTENT from '../../utils/scripts/text-content';
+
 import promoPictureWebp from '../../images/promo/promo-picture.webp';
 import promoPicturePng from '../../images/promo/promo-picture.png';
 
@@ -15,22 +17,19 @@ function Promo() {
   return (
     <Section classNameFromChild="promo">
       <h1 className={`promo__title ${!isTablet ? 'visually-hidden' : ''}`}>
-        Вторсырьё на&nbsp;благотворительность
+        {TEXT_CONTENT.PROMO.TITLE}
       </h1>
       <picture className="promo__picture-wrapper">
         <source srcSet={promoPictureWebp} />
         <img
           className="promo__picture"
           src={promoPicturePng}
-          alt="Логотип движения Вторсырьё на благотворительность"
+          alt={TEXT_CONTENT.PROMO.PICTURE_ALT}
         />
       </picture>
-      <p className="promo__subtitle">
-        Страница движения &laquo;ВнБ Самара&raquo;, где можно подробнее узнать про движение,
-        а&nbsp;также найти полезную информацию по&nbsp;раздельному сбору отходов.
-      </p>
+      <p className="promo__subtitle">{TEXT_CONTENT.PROMO.SUBTITLE}</p>
       <CustomButton className="button promo__button" isClassicStyle>
-        Узнать больше
+        {TEXT_CONTENT.PROMO.BUTTON}
       </CustomButton>
     </Section>
   );
