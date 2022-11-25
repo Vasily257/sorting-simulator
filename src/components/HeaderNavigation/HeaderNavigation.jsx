@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import LoggedInContext from '../../contexts/LoggedInContext';
 import useScreenView from '../../hooks/useScreenView';
 
+import CustomList from '../CustomList/CustomList';
 import CustomLink from '../CustomLink/CustomLink';
 import ButtonLink from '../ButtonLink/ButtonLink';
 
@@ -19,7 +20,7 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
     <>
       {isLoggedIn && isNavbarShown && (
         <nav className={`${сlassNameFromParent} header-navigation`}>
-          <ul className="header-navigation__list">
+          <CustomList className="header-navigation__list">
             <li className="header-navigation__item">
               <CustomLink
                 path="/"
@@ -64,12 +65,12 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
                 text="Профиль"
               />
             </li>
-          </ul>
+          </CustomList>
         </nav>
       )}
       {!isLoggedIn && (
         <nav className={`${сlassNameFromParent} header-navigation header-navigation_type_signbar`}>
-          <ul className="header-navigation__list header-navigation__list_type_signbar">
+          <CustomList className="header-navigation__list header-navigation__list_type_signbar">
             <li className="header-navigation__item header-navigation__item_type_signbar">
               <ButtonLink
                 path="/signup"
@@ -86,7 +87,7 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
                 text="Вход"
               />
             </li>
-          </ul>
+          </CustomList>
         </nav>
       )}
     </>
