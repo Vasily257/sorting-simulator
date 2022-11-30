@@ -19,7 +19,7 @@ CustomList.propTypes = {
 
 CustomList.defaultProps = {
   className: '',
-  ariaLabel: '',
+  ariaLabel: '' || null,
   children: '' || null,
 };
 
