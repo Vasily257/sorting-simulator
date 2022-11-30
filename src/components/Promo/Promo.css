@@ -9,16 +9,7 @@
 
 .promo__title {
   max-width: 300px;
-  margin: 0;
-  padding: 0;
-
-  text-align: center;
-
-  color: inherit;
-
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.15;
+  margin-bottom: 0;
 }
 
 .promo__picture-wrapper {
@@ -69,10 +60,6 @@
     grid-row: 1/2;
 
     max-width: 400px;
-
-    text-align: left;
-
-    font-size: 25px;
   }
 
   .promo__picture-wrapper {
@@ -103,10 +90,6 @@
 }
 
 @media screen and (min-width: 900px) {
-  .promo__title {
-    font-size: 30px;
-  }
-
   .promo__picture-wrapper {
     max-width: 400px;
   }

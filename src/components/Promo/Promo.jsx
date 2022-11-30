@@ -14,11 +14,16 @@ import './Promo.css';
 
 function Promo() {
   const { isTablet } = useScreenView();
+  const titleClassName = `promo__title ${!isTablet ? 'visually-hidden' : ''}`;
+
   return (
-    <Section classNameFromChild="promo">
-      <h1 className={`promo__title ${!isTablet ? 'visually-hidden' : ''}`}>
-        {TEXT_CONTENT.PROMO.TITLE}
-      </h1>
+    <Section
+      titleText={TEXT_CONTENT.PROMO.TITLE}
+      isMainSection
+      sectionClassNameFromChild="promo"
+      titleClassNameFromChild={titleClassName}
+      contentClassNameFromChild="promo__content"
+    >
       <picture className="promo__picture-wrapper">
         <source srcSet={promoPictureWebp} />
         <img
