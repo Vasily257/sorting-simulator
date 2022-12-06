@@ -13,44 +13,44 @@ function History() {
 
   const buttonActiveClassName = 'history__year-button_active';
 
-  function getButtonActiveClassName(ID) {
-    if (selectedId === ID) return buttonActiveClassName;
+  function getButtonActiveClassName(id) {
+    if (selectedId === id) return buttonActiveClassName;
     return '';
   }
 
-  const yearFacts = TEXT_CONTENT.HISTORY.YEAR_FACTS;
+  const { title, yearFacts } = TEXT_CONTENT.HISTORY;
 
   return (
     <Section
-      titleText={TEXT_CONTENT.HISTORY.TITLE}
+      titleText={title}
       sectionClassNameFromChild="history"
       titleClassNameFromChild="history__title"
     >
       <div className="history__content">
         <CustomList className="history__years">
-          {yearFacts.map(({ ID, YEAR }) => (
-            <li key={ID} className="history__year">
+          {yearFacts.map(({ id, year }) => (
+            <li key={id} className="history__year">
               <CustomButton
-                className={`history__year-button ${getButtonActiveClassName(ID)}`}
-                onClick={() => setSelectedID(ID)}
+                className={`history__year-button ${getButtonActiveClassName(id)}`}
+                onClick={() => setSelectedID(id)}
                 isClassicStyle
               >
-                <span className="history__year-button-text">{YEAR}</span>
+                <span className="history__year-button-text">{year}</span>
               </CustomButton>
             </li>
           ))}
         </CustomList>
         {yearFacts
-          .filter(({ ID }) => ID === selectedId)
-          .map(({ ID, YEAR, FACTS }) => (
+          .filter(({ id }) => id === selectedId)
+          .map(({ id, year, facts }) => (
             <CustomList
-              key={ID}
+              key={id}
               className="history__facts"
-              ariaLabel={`События выбранного года: ${YEAR}`}
+              ariaLabel={`События выбранного года: ${year}`}
             >
-              {FACTS.map(({ FACT_ID, FACT }) => (
-                <li key={FACT_ID} className="history__fact">
-                  <p className="history__fact-text">{FACT}</p>
+              {facts.map(({ factId, fact }) => (
+                <li key={factId} className="history__fact">
+                  <p className="history__fact-text">{fact}</p>
                 </li>
               ))}
             </CustomList>

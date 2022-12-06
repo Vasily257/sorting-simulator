@@ -9,13 +9,15 @@ import TEXT_CONTENT from '../../utils/scripts/text-content';
 import './About.css';
 
 function About() {
+  const { title, items } = TEXT_CONTENT.ABOUT;
+
   return (
-    <Section titleText={TEXT_CONTENT.ABOUT.TITLE}>
+    <Section titleText={title}>
       <CustomList className="about__list">
-        {TEXT_CONTENT.ABOUT.ITEMS.map(({ ID, SUBTITLE, DESCRIPTION }) => (
-          <li key={ID} className="about__item">
-            <h3 className="about__subtitle">{SUBTITLE}</h3>
-            <p className="about__description">{DESCRIPTION}</p>
+        {items.map(({ id, subtitle, description }) => (
+          <li key={id} className="about__item">
+            <h3 className="about__subtitle">{subtitle}</h3>
+            <p className="about__description">{description}</p>
           </li>
         ))}
       </CustomList>

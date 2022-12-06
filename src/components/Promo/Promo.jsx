@@ -16,9 +16,13 @@ function Promo() {
   const { isTablet } = useScreenView();
   const titleClassName = `promo__title ${!isTablet ? 'visually-hidden' : ''}`;
 
+  const {
+    title, subtitle, pictureAltText, buttonText,
+  } = TEXT_CONTENT.PROMO;
+
   return (
     <Section
-      titleText={TEXT_CONTENT.PROMO.TITLE}
+      titleText={title}
       isMainSection
       sectionClassNameFromChild="promo"
       titleClassNameFromChild={titleClassName}
@@ -26,15 +30,11 @@ function Promo() {
     >
       <picture className="promo__picture-wrapper">
         <source srcSet={promoPictureWebp} />
-        <img
-          className="promo__picture"
-          src={promoPicturePng}
-          alt={TEXT_CONTENT.PROMO.PICTURE_ALT}
-        />
+        <img className="promo__picture" src={promoPicturePng} alt={pictureAltText} />
       </picture>
-      <p className="promo__subtitle">{TEXT_CONTENT.PROMO.SUBTITLE}</p>
+      <p className="promo__subtitle">{subtitle}</p>
       <CustomButton className="button promo__button" isClassicStyle>
-        {TEXT_CONTENT.PROMO.BUTTON}
+        {buttonText}
       </CustomButton>
     </Section>
   );
