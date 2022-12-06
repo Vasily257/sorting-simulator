@@ -4,6 +4,23 @@
 // &raquo; — \u00BB
 
 const TEXT_CONTENT = {
+  HEADER: {
+    navbarItems: [
+      { id: 0, text: 'Главная' },
+      { id: 1, text: 'Тренажёр' },
+      { id: 2, text: 'Памятки' },
+      { id: 3, text: 'Справочник' },
+    ],
+    signbarItems: [
+      {
+        id: 0, text: 'Регистрация', type: 'register', path: '/signup',
+      },
+      {
+        id: 1, text: 'Вход', type: 'login', path: '/signin',
+      },
+    ],
+  },
+
   PROMO: {
     title: 'Вторсырьё на\u00A0благотворительность',
     pictureAltText: 'Логотип движения \u00ABВторсырьё на\u00A0благотворительность\u00BB',

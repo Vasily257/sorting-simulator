@@ -8,6 +8,8 @@ import CustomList from '../CustomList/CustomList';
 import CustomLink from '../CustomLink/CustomLink';
 import ButtonLink from '../ButtonLink/ButtonLink';
 
+import TEXT_CONTENT from '../../utils/scripts/text-content';
+
 import './HeaderNavigation.css';
 
 function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
@@ -16,47 +18,24 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
 
   const isNavbarShown = isDesktop || (isMenuOpened && (isTablet || isMobile));
 
+  const { navbarItems, signbarItems } = TEXT_CONTENT.HEADER;
+
   return (
     <>
       {isLoggedIn && isNavbarShown && (
         <nav className={`${сlassNameFromParent} header-navigation`}>
           <CustomList className="header-navigation__list">
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Главная
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/simulator"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Тренажёр
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/memos"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Памятки
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/catalog"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Справочник
-              </CustomLink>
-            </li>
+            {navbarItems.map((item) => (
+              <li className="header-navigation__item">
+                <CustomLink
+                  path="/"
+                  className="header-navigation__link"
+                  activeClassName="header-navigation__link_active"
+                >
+                  {item}
+                </CustomLink>
+              </li>
+            ))}
             <li className="header-navigation__item">
               <ButtonLink
                 path="/profile"
@@ -71,22 +50,18 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
       {!isLoggedIn && (
         <nav className={`${сlassNameFromParent} header-navigation header-navigation_type_signbar`}>
           <CustomList className="header-navigation__list header-navigation__list_type_signbar">
-            <li className="header-navigation__item header-navigation__item_type_signbar">
-              <ButtonLink
-                path="/signup"
-                className="header-navigation__link header-navigation__link_type_signbar"
-                type="register"
-                text="Регистрация"
-              />
-            </li>
-            <li className="header-navigation__item header-navigation__item_type_signbar">
-              <ButtonLink
-                path="/signin"
-                className="header-navigation__link header-navigation__link_type_signbar"
-                type="login"
-                text="Вход"
-              />
-            </li>
+            {signbarItems.map(({
+              id, text, type, path,
+            }) => (
+              <li key={id} className="header-navigation__item header-navigation__item_type_signbar">
+                <ButtonLink
+                  path={path}
+                  className="header-navigation__link header-navigation__link_type_signbar"
+                  type={type}
+                  text={text}
+                />
+              </li>
+            ))}
           </CustomList>
         </nav>
       )}
