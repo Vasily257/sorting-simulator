@@ -6,17 +6,24 @@
 const TEXT_CONTENT = {
   HEADER: {
     navbarItems: [
-      { id: 0, text: 'Главная' },
-      { id: 1, text: 'Тренажёр' },
-      { id: 2, text: 'Памятки' },
-      { id: 3, text: 'Справочник' },
+      { id: 0, text: 'Главная', path: '/' },
+      { id: 1, text: 'Тренажёр', path: '/simulator' },
+      { id: 2, text: 'Памятки', path: '/memos' },
+      { id: 3, text: 'Справочник', path: '/catalog' },
     ],
+    profileButton: { text: 'Профиль', type: 'profile', path: '/profile' },
     signbarItems: [
       {
-        id: 0, text: 'Регистрация', type: 'register', path: '/signup',
+        id: 0,
+        text: 'Регистрация',
+        type: 'register',
+        path: '/signup',
       },
       {
-        id: 1, text: 'Вход', type: 'login', path: '/signin',
+        id: 1,
+        text: 'Вход',
+        type: 'login',
+        path: '/signin',
       },
     ],
   },
