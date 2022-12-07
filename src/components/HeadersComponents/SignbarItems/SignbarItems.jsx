@@ -1,6 +1,6 @@
 import React from 'react';
-import ButtonLink from '../ButtonLink/ButtonLink';
-import TEXT_CONTENT from '../../utils/scripts/text-content';
+import ButtonLink from '../../ButtonLink/ButtonLink';
+import TEXT_CONTENT from '../../../utils/scripts/text-content';
 
 function SignbarItems({ itemClassName, linkClassName }) {
   const { signbarItems } = TEXT_CONTENT.HEADER;

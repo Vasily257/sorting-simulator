@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import LoggedInContext from '../../contexts/LoggedInContext';
-import useScreenView from '../../hooks/useScreenView';
+import LoggedInContext from '../../../contexts/LoggedInContext';
+import useScreenView from '../../../hooks/useScreenView';
 
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../../CustomButton/CustomButton';
 
 import './HeaderMenuButton.css';
 

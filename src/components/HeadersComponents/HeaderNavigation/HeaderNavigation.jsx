@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import LoggedInContext from '../../contexts/LoggedInContext';
-import useScreenView from '../../hooks/useScreenView';
+import LoggedInContext from '../../../contexts/LoggedInContext';
+import useScreenView from '../../../hooks/useScreenView';
 import Navbar from '../Navbar/Navbar';
 import Signbar from '../Signbar/Signbar';
 

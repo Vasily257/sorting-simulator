@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 
-import LoggedInContext from '../../contexts/LoggedInContext';
+import LoggedInContext from '../../../contexts/LoggedInContext';
 
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 
-import headerLogoUrl from '../../images/header-logo.svg';
+import headerLogoUrl from '../../../images/header-logo.svg';
 
 import './Header.css';
 

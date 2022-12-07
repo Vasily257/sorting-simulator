@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomLink from '../CustomLink/CustomLink';
-import TEXT_CONTENT from '../../utils/scripts/text-content';
+import CustomLink from '../../CustomLink/CustomLink';
+import TEXT_CONTENT from '../../../utils/scripts/text-content';
 
 function NavbarItems({ itemClassName, linkClassName, activeLinkClassName }) {
   const { navbarItems } = TEXT_CONTENT.HEADER;

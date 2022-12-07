@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonLink from '../ButtonLink/ButtonLink';
-import TEXT_CONTENT from '../../utils/scripts/text-content';
+import ButtonLink from '../../ButtonLink/ButtonLink';
+import TEXT_CONTENT from '../../../utils/scripts/text-content';
 
 function ProfileButton({ itemClassName, linkClassName }) {
   const { profileButton } = TEXT_CONTENT.HEADER;

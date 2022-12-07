@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CustomList from '../CustomList/CustomList';
+import CustomList from '../../CustomList/CustomList';
 import NavbarItems from '../NavbarItems/NavbarItems';
 import ProfileButton from '../ProfileButton/ProfileButton';
-import CLASSNAMES from '../../utils/scripts/classnames';
+import CLASSNAMES from '../../../utils/scripts/classnames';
 
 function Navbar({ сlassNameFromParent }) {
   const {
