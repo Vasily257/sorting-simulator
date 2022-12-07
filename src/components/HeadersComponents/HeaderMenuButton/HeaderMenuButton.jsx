@@ -1,38 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-
-import LoggedInContext from '../../../contexts/LoggedInContext';
-import useScreenView from '../../../hooks/useScreenView';
-
 import CustomButton from '../../CustomButton/CustomButton';
 
 import './HeaderMenuButton.css';
+import TEXT_CONTENT from '../../../utils/scripts/text-content';
+import CLASSNAMES from '../../../utils/scripts/classnames';
 
 function HeaderMenuButton({ сlassNameFromParent, isMenuOpened, setIsMenuOpened }) {
-  const { isLoggedIn } = useContext(LoggedInContext);
-  const { isDesktop } = useScreenView();
+  const { main, mainOpened } = CLASSNAMES.HEADER_MENU_BUTTON;
+  const mainClassName = `${сlassNameFromParent} ${main} ${isMenuOpened ? mainOpened : ''}`;
 
-  const finalClassName = `${сlassNameFromParent} header-menu-button ${
-    isMenuOpened ? 'header-menu-button_opened' : ''
-  }`;
-
-  useEffect(() => {
-    if (isDesktop) {
-      setIsMenuOpened(false);
-    }
-  }, [isDesktop, setIsMenuOpened]);
+  const { ariaLabelMenuButton } = TEXT_CONTENT.HEADER;
+  const { close, open } = ariaLabelMenuButton;
 
   return (
-    isLoggedIn
-    && !isDesktop && (
-      <CustomButton
-        className={finalClassName}
-        onClick={() => {
-          setIsMenuOpened(!isMenuOpened);
-        }}
-        ariaLabel={isMenuOpened ? 'Закрыть меню' : 'Открыть меню'}
-      />
-    )
+    <CustomButton
+      className={mainClassName}
+      onClick={() => setIsMenuOpened(!isMenuOpened)}
+      ariaLabel={isMenuOpened ? close : open}
+    />
   );
 }
 

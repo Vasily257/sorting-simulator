@@ -8,7 +8,6 @@ const CLASSNAMES = {
     logo: 'header__logo',
     menuButton: 'header__menu-button',
   },
-
   HEADER_NAVIGATION: {
     main: 'header-navigation',
     mainTypeSignBar: 'header-navigation_type_signbar',
@@ -19,6 +18,10 @@ const CLASSNAMES = {
     link: 'header-navigation__link',
     linkTypeSignBar: 'header-navigation__link_type_signbar',
     activeLink: 'header-navigation__link_active',
+  },
+  HEADER_MENU_BUTTON: {
+    main: 'header-menu-button',
+    mainOpened: 'header-menu-button_opened',
   },
 };
 

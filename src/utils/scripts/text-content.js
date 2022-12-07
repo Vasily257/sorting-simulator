@@ -27,6 +27,7 @@ const TEXT_CONTENT = {
         path: '/signin',
       },
     ],
+    ariaLabelMenuButton: { close: 'Закрыть меню', open: 'Открыть меню' },
   },
 
   PROMO: {
