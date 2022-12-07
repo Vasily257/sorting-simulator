@@ -5,6 +5,7 @@
 
 const TEXT_CONTENT = {
   HEADER: {
+    logoAlt: 'Логотип сайта',
     navbarItems: [
       { id: 0, text: 'Главная', path: '/' },
       { id: 1, text: 'Тренажёр', path: '/simulator' },
