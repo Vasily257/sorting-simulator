@@ -5,7 +5,7 @@
 
 const TEXT_CONTENT = {
   HEADER: {
-    logoAlt: 'Логотип сайта',
+    logoAlttext: 'Логотип сайта',
     navbarItems: [
       { id: 0, text: 'Главная', path: '/' },
       { id: 1, text: 'Тренажёр', path: '/simulator' },
@@ -39,7 +39,7 @@ const TEXT_CONTENT = {
   },
 
   ABOUT: {
-    title: 'О\u00A0проекте',
+    titleText: 'О\u00A0проекте',
     items: [
       { id: 0, subtitle: 'Что за\u00A0проект', description: 'Hекоммерческий волонтерский проект.' },
       {
@@ -58,7 +58,7 @@ const TEXT_CONTENT = {
   },
 
   HISTORY: {
-    title: 'История',
+    titleText: 'История',
     yearFacts: [
       {
         id: 0,

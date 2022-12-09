@@ -9,10 +9,10 @@ import TEXT_CONTENT from '../../utils/scripts/text-content';
 import './About.css';
 
 function About() {
-  const { title, items } = TEXT_CONTENT.ABOUT;
+  const { titleText, items } = TEXT_CONTENT.ABOUT;
 
   return (
-    <Section titleText={title}>
+    <Section titleText={titleText}>
       <CustomList className="about__list">
         {items.map(({ id, subtitle, description }) => (
           <li key={id} className="about__item">

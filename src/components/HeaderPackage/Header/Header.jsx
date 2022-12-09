@@ -19,11 +19,11 @@ function Header() {
   } = getHeaderClassnames();
   const { isMenuButtonShown } = getComponentStatuses();
 
-  const { logoAlt } = TEXT_CONTENT.HEADER;
+  const { logoAltText } = TEXT_CONTENT.HEADER;
 
   return (
     <header className={mainClassName}>
-      <img className={logo} src={headerLogoUrl} alt={logoAlt} />
+      <img className={logo} src={headerLogoUrl} alt={logoAltText} />
       <HeaderNavigation classNameFromParent={navigationClassName} isMenuOpened={isMenuOpened} />
       {isMenuButtonShown && (
         <HeaderMenuButton

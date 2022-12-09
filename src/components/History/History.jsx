@@ -18,11 +18,11 @@ function History() {
     return '';
   }
 
-  const { title, yearFacts } = TEXT_CONTENT.HISTORY;
+  const { titleText, yearFacts } = TEXT_CONTENT.HISTORY;
 
   return (
     <Section
-      titleText={title}
+      titleText={titleText}
       sectionClassNameFromChild="history"
       titleClassNameFromChild="history__title"
     >
