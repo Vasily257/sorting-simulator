@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import useHeaderMenuButton from '../../../hooks/for-components/useHeaderMenuButton';
 import CustomButton from '../../CustomButton/CustomButton';
-import TEXT_CONTENT from '../../../utils/scripts/text-content';
-import CLASSNAMES from '../../../utils/scripts/classnames';
 import './HeaderMenuButton.css';
 
 function HeaderMenuButton({ classNameFromParent, isMenuOpened, setIsMenuOpened }) {
-  const { main, mainOpened } = CLASSNAMES.HEADER_MENU_BUTTON;
-  const mainClassName = `${classNameFromParent} ${main} ${isMenuOpened ? mainOpened : ''}`;
-
-  const { ariaLabelMenuButton } = TEXT_CONTENT.HEADER;
-  const { close, open } = ariaLabelMenuButton;
+  const { getClassNames, getAriaLabelText } = useHeaderMenuButton({
+    classNameFromParent,
+    isMenuOpened,
+  });
+  const { mainClassName } = getClassNames();
+  const { close, open } = getAriaLabelText();
 
   return (
     <CustomButton

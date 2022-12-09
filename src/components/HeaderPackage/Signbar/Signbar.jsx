@@ -1,28 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
 import CustomList from '../../CustomList/CustomList';
 import SignbarItems from '../SignbarItems/SignbarItems';
-import CLASSNAMES from '../../../utils/scripts/classnames';
 
 function Signbar({ classNameFromParent }) {
+  const { getClassNames } = useHeaderNavigation();
   const {
-    main,
-    list,
-    item,
-    link,
-    mainTypeSignBar,
-    listTypeSignBar,
-    itemTypeSignBar,
-    linkTypeSignBar,
-  } = CLASSNAMES.HEADER_NAVIGATION;
+    main, list, mainTypeSignBar, listTypeSignBar,
+  } = getClassNames();
 
   return (
     <nav className={`${classNameFromParent} ${main} ${mainTypeSignBar}`}>
       <CustomList className={`${list} ${listTypeSignBar}`}>
-        <SignbarItems
-          itemClassName={`${item} ${itemTypeSignBar}`}
-          linkClassName={`${link} ${linkTypeSignBar}`}
-        />
+        <SignbarItems />
       </CustomList>
     </nav>
   );

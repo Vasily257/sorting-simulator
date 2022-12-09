@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
 import CustomList from '../../CustomList/CustomList';
 import NavbarItems from '../NavbarItems/NavbarItems';
 import ProfileButton from '../ProfileButton/ProfileButton';
-import CLASSNAMES from '../../../utils/scripts/classnames';
 
 function Navbar({ classNameFromParent }) {
-  const {
-    main, list, item, link, activeLink,
-  } = CLASSNAMES.HEADER_NAVIGATION;
+  const { getClassNames } = useHeaderNavigation();
+  const { main, list } = getClassNames();
 
   return (
     <nav className={`${classNameFromParent} ${main}`}>
       <CustomList className={list}>
-        <NavbarItems itemClassName={item} linkClassName={link} activeLinkClassName={activeLink} />
-        <ProfileButton itemClassName={item} linkClassName={link} />
+        <NavbarItems />
+        <ProfileButton />
       </CustomList>
     </nav>
   );

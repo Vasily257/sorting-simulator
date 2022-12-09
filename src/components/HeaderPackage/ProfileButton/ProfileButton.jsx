@@ -1,22 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
 import ButtonLink from '../../ButtonLink/ButtonLink';
-import TEXT_CONTENT from '../../../utils/scripts/text-content';
 
-function ProfileButton({ itemClassName, linkClassName }) {
-  const { profileButton } = TEXT_CONTENT.HEADER;
-  const { text, type, path } = profileButton;
+function ProfileButton() {
+  const { getClassNames, getProfileButtonInfo } = useHeaderNavigation();
+  const { item, link } = getClassNames();
+  const { text, type, path } = getProfileButtonInfo();
 
   return (
-    <li className={itemClassName}>
-      <ButtonLink path={path} className={linkClassName} type={type} text={text} />
+    <li className={item}>
+      <ButtonLink path={path} className={link} type={type} text={text} />
     </li>
   );
 }
-
-ProfileButton.propTypes = {
-  itemClassName: PropTypes.string.isRequired,
-  linkClassName: PropTypes.string.isRequired,
-};
 
 export default ProfileButton;

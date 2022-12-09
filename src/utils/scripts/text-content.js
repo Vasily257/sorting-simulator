@@ -6,13 +6,15 @@
 const TEXT_CONTENT = {
   HEADER: {
     logoAlttext: 'Логотип сайта',
+  },
+
+  HEADER_NAVIGATION: {
     navbarItems: [
       { id: 0, text: 'Главная', path: '/' },
       { id: 1, text: 'Тренажёр', path: '/simulator' },
       { id: 2, text: 'Памятки', path: '/memos' },
       { id: 3, text: 'Справочник', path: '/catalog' },
     ],
-    profileButton: { text: 'Профиль', type: 'profile', path: '/profile' },
     signbarItems: [
       {
         id: 0,
@@ -27,8 +29,10 @@ const TEXT_CONTENT = {
         path: '/signin',
       },
     ],
-    ariaLabelMenuButton: { close: 'Закрыть меню', open: 'Открыть меню' },
+    profileButton: { text: 'Профиль', type: 'profile', path: '/profile' },
   },
+
+  HEADER_MENU_BUTTON: { ariaLabelText: { close: 'Закрыть меню', open: 'Открыть меню' } },
 
   PROMO: {
     titleText: 'Вторсырьё на\u00A0благотворительность',

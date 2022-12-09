@@ -1,13 +1,15 @@
 import React from 'react';
+import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
 import CustomLink from '../../CustomLink/CustomLink';
-import TEXT_CONTENT from '../../../utils/scripts/text-content';
 
-function NavbarItems({ itemClassName, linkClassName, activeLinkClassName }) {
-  const { navbarItems } = TEXT_CONTENT.HEADER;
+function NavbarItems() {
+  const { getClassNames, getItems } = useHeaderNavigation();
+  const { item, link, activeLink } = getClassNames();
+  const { navbarItems } = getItems();
 
   return navbarItems.map(({ id, text, path }) => (
-    <li key={id} className={itemClassName}>
-      <CustomLink path={path} className={linkClassName} activeClassName={activeLinkClassName}>
+    <li key={id} className={item}>
+      <CustomLink path={path} className={link} activeClassName={activeLink}>
         {text}
       </CustomLink>
     </li>
