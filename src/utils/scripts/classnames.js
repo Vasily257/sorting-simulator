@@ -41,6 +41,13 @@ const CLASSNAMES = {
     subtitle: 'promo__subtitle',
     button: 'promo__button',
   },
+  ABOUT: {
+    main: 'about',
+    list: 'about__list',
+    item: 'about__item',
+    subtitle: 'about__subtitle',
+    description: 'about__description',
+  },
 };
 
 export default CLASSNAMES;
