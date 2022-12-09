@@ -23,6 +23,12 @@ const CLASSNAMES = {
     main: 'header-menu-button',
     mainOpened: 'header-menu-button_opened',
   },
+  SECTION: {
+    main: 'section',
+    title: 'section__title',
+    titleLevelFirst: 'section__title_level_first',
+    titleLevelSecond: 'section__title_level_second',
+  },
 };
 
 export default CLASSNAMES;

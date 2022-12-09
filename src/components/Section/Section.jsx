@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useSection from '../../hooks/for-components/useSection';
 
 import './Section.css';
 
@@ -10,15 +11,15 @@ function Section({
   titleClassNameFromChild,
   children,
 }) {
-  const sectionClassName = `section ${sectionClassNameFromChild}`;
+  const { getComplexClassNames, getTitleMakrup } = useSection({
+    titleText,
+    isMainSection,
+    sectionClassNameFromChild,
+    titleClassNameFromChild,
+  });
 
-  const firstLevelTitleClassName = `section__title section__title_level_first ${titleClassNameFromChild}`;
-  const secondLevelTitleClassName = `section__title section__title_level_second ${titleClassNameFromChild}`;
-
-  const firstLevelTitle = <h1 className={firstLevelTitleClassName}>{titleText}</h1>;
-  const secondLevelTitle = <h2 className={secondLevelTitleClassName}>{titleText}</h2>;
-
-  const sectionTitle = isMainSection ? firstLevelTitle : secondLevelTitle;
+  const { sectionClassName } = getComplexClassNames();
+  const { sectionTitle } = getTitleMakrup();
 
   return (
     <section className={sectionClassName}>
