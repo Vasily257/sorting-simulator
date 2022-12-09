@@ -1,39 +1,37 @@
 import React from 'react';
-
-import useScreenView from '../../hooks/useScreenView';
-
+import usePromo from '../../hooks/for-components/usePromo';
 import Section from '../Section/Section';
 import CustomButton from '../CustomButton/CustomButton';
-
 import TEXT_CONTENT from '../../utils/scripts/text-content';
-
 import promoPictureWebp from '../../images/promo/promo-picture.webp';
 import promoPicturePng from '../../images/promo/promo-picture.png';
 
 import './Promo.css';
 
 function Promo() {
-  const { isTablet } = useScreenView();
-  const titleClassName = `promo__title ${!isTablet ? 'visually-hidden' : ''}`;
+  const { getPromoClassnames } = usePromo();
+  const {
+    main, titleClassName, content, pictureWrapper, picture, subtitle, button,
+  } = getPromoClassnames();
 
   const {
-    title, subtitle, pictureAltText, buttonText,
+    titleText, subtitleText, pictureAltText, buttonText,
   } = TEXT_CONTENT.PROMO;
 
   return (
     <Section
-      titleText={title}
+      titleText={titleText}
       isMainSection
-      sectionClassNameFromChild="promo"
+      sectionClassNameFromChild={main}
       titleClassNameFromChild={titleClassName}
-      contentClassNameFromChild="promo__content"
+      contentClassNameFromChild={content}
     >
-      <picture className="promo__picture-wrapper">
+      <picture className={pictureWrapper}>
         <source srcSet={promoPictureWebp} />
-        <img className="promo__picture" src={promoPicturePng} alt={pictureAltText} />
+        <img className={picture} src={promoPicturePng} alt={pictureAltText} />
       </picture>
-      <p className="promo__subtitle">{subtitle}</p>
-      <CustomButton className="button promo__button" isClassicStyle>
+      <p className={subtitle}>{subtitleText}</p>
+      <CustomButton className={button} isClassicStyle>
         {buttonText}
       </CustomButton>
     </Section>

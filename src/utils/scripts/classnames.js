@@ -1,4 +1,7 @@
 const CLASSNAMES = {
+  SPECIAL: {
+    visuallyHidden: 'visually-hidden',
+  },
   HEADER: {
     main: 'header',
     mainPositionStandart: 'header_position_standart',
@@ -28,6 +31,15 @@ const CLASSNAMES = {
     title: 'section__title',
     titleLevelFirst: 'section__title_level_first',
     titleLevelSecond: 'section__title_level_second',
+  },
+  PROMO: {
+    main: 'promo',
+    title: 'promo__title',
+    content: 'promo__content',
+    pictureWrapper: 'promo__picture-wrapper',
+    picture: 'promo__picture',
+    subtitle: 'promo__subtitle',
+    button: 'promo__button',
   },
 };
 
