@@ -2,24 +2,22 @@ import React, { useState } from 'react';
 import useHeader from '../../../hooks/for-components/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
-import TEXT_CONTENT from '../../../utils/scripts/text-content';
 import headerLogoUrl from '../../../images/header-logo.svg';
 
 import './Header.css';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const { getComponentStatuses, getHeaderClassnames } = useHeader({
+
+  const { getComponentStatuses, getClassNames, getLogoAltText } = useHeader({
     isMenuOpened,
     setIsMenuOpened,
   });
-
   const {
     logo, menuButton, mainClassName, navigationClassName,
-  } = getHeaderClassnames();
+  } = getClassNames();
   const { isMenuButtonShown } = getComponentStatuses();
-
-  const { logoAltText } = TEXT_CONTENT.HEADER;
+  const { logoAltText } = getLogoAltText();
 
   return (
     <header className={mainClassName}>

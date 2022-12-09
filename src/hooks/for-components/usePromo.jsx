@@ -14,7 +14,7 @@ function usePromo() {
     return { titleClassName };
   }
 
-  function getPromoClassnames() {
+  function getPromoClassNames() {
     const { titleClassName } = getComplexClassNames();
 
     return {
@@ -29,7 +29,7 @@ function usePromo() {
   }
 
   return {
-    getPromoClassnames,
+    getPromoClassNames,
   };
 }
 

@@ -9,10 +9,10 @@ import promoPicturePng from '../../images/promo/promo-picture.png';
 import './Promo.css';
 
 function Promo() {
-  const { getPromoClassnames } = usePromo();
+  const { getPromoClassNames } = usePromo();
   const {
     main, titleClassName, content, pictureWrapper, picture, subtitle, button,
-  } = getPromoClassnames();
+  } = getPromoClassNames();
 
   const {
     titleText, subtitleText, pictureAltText, buttonText,

@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 import LoggedInContext from '../../contexts/LoggedInContext';
 import useScreenView from '../useScreenView';
 import CLASSNAMES from '../../utils/scripts/classnames';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function useHeader({ isMenuOpened, setIsMenuOpened }) {
   const { isLoggedIn } = useContext(LoggedInContext);
@@ -24,7 +25,7 @@ function useHeader({ isMenuOpened, setIsMenuOpened }) {
     return { mainClassName, navigationClassName };
   }
 
-  function getHeaderClassnames() {
+  function getClassNames() {
     const { mainClassName, navigationClassName } = getComplexClassNames();
 
     return {
@@ -39,8 +40,12 @@ function useHeader({ isMenuOpened, setIsMenuOpened }) {
     const isMenuButtonShown = isLoggedIn && !isDesktop;
     const isNavbarShown = isLoggedIn && (isDesktop || (isMenuOpened && (isTablet || isMobile)));
     const isSignBarShown = !isLoggedIn;
-
     return { isMenuButtonShown, isNavbarShown, isSignBarShown };
+  }
+
+  function getLogoAltText() {
+    const { logoAltText } = TEXT_CONTENT.HEADER;
+    return { logoAltText };
   }
 
   useEffect(() => {
@@ -50,10 +55,9 @@ function useHeader({ isMenuOpened, setIsMenuOpened }) {
   }, [isDesktop, setIsMenuOpened]);
 
   return {
-    isMenuOpened,
-    setIsMenuOpened,
+    getClassNames,
     getComponentStatuses,
-    getHeaderClassnames,
+    getLogoAltText,
   };
 }
 
