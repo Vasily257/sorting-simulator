@@ -6,9 +6,9 @@ import './HeaderMenuButton.css';
 import TEXT_CONTENT from '../../../utils/scripts/text-content';
 import CLASSNAMES from '../../../utils/scripts/classnames';
 
-function HeaderMenuButton({ сlassNameFromParent, isMenuOpened, setIsMenuOpened }) {
+function HeaderMenuButton({ classNameFromParent, isMenuOpened, setIsMenuOpened }) {
   const { main, mainOpened } = CLASSNAMES.HEADER_MENU_BUTTON;
-  const mainClassName = `${сlassNameFromParent} ${main} ${isMenuOpened ? mainOpened : ''}`;
+  const mainClassName = `${classNameFromParent} ${main} ${isMenuOpened ? mainOpened : ''}`;
 
   const { ariaLabelMenuButton } = TEXT_CONTENT.HEADER;
   const { close, open } = ariaLabelMenuButton;
@@ -23,7 +23,7 @@ function HeaderMenuButton({ сlassNameFromParent, isMenuOpened, setIsMenuOpened 
 }
 
 HeaderMenuButton.propTypes = {
-  сlassNameFromParent: PropTypes.string.isRequired,
+  classNameFromParent: PropTypes.string.isRequired,
   isMenuOpened: PropTypes.bool.isRequired,
   setIsMenuOpened: PropTypes.func.isRequired,
 };

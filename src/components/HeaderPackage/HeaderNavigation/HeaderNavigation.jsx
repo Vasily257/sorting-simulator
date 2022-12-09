@@ -7,7 +7,7 @@ import Signbar from '../Signbar/Signbar';
 
 import './HeaderNavigation.css';
 
-function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
+function HeaderNavigation({ classNameFromParent, isMenuOpened }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop, isTablet, isMobile } = useScreenView();
 
@@ -15,14 +15,14 @@ function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
 
   return (
     <>
-      {isLoggedIn && isNavbarShown && <Navbar сlassNameFromParent={сlassNameFromParent} />}
-      {!isLoggedIn && <Signbar сlassNameFromParent={сlassNameFromParent} />}
+      {isLoggedIn && isNavbarShown && <Navbar classNameFromParent={classNameFromParent} />}
+      {!isLoggedIn && <Signbar classNameFromParent={classNameFromParent} />}
     </>
   );
 }
 
 HeaderNavigation.propTypes = {
-  сlassNameFromParent: PropTypes.string.isRequired,
+  classNameFromParent: PropTypes.string.isRequired,
   isMenuOpened: PropTypes.bool.isRequired,
 };
 

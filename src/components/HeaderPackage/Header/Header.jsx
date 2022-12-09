@@ -39,10 +39,10 @@ function Header() {
   return (
     <header className={mainClassName}>
       <img className={logo} src={headerLogoUrl} alt={logoAlt} />
-      <HeaderNavigation сlassNameFromParent={navigationClassName} isMenuOpened={isMenuOpened} />
+      <HeaderNavigation classNameFromParent={navigationClassName} isMenuOpened={isMenuOpened} />
       {isMenuButtonShown && (
         <HeaderMenuButton
-          сlassNameFromParent={menuButton}
+          classNameFromParent={menuButton}
           isMenuOpened={isMenuOpened}
           setIsMenuOpened={setIsMenuOpened}
         />

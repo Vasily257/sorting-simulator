@@ -4,7 +4,7 @@ import CustomList from '../../CustomList/CustomList';
 import SignbarItems from '../SignbarItems/SignbarItems';
 import CLASSNAMES from '../../../utils/scripts/classnames';
 
-function Signbar({ сlassNameFromParent }) {
+function Signbar({ classNameFromParent }) {
   const {
     main,
     list,
@@ -17,7 +17,7 @@ function Signbar({ сlassNameFromParent }) {
   } = CLASSNAMES.HEADER_NAVIGATION;
 
   return (
-    <nav className={`${сlassNameFromParent} ${main} ${mainTypeSignBar}`}>
+    <nav className={`${classNameFromParent} ${main} ${mainTypeSignBar}`}>
       <CustomList className={`${list} ${listTypeSignBar}`}>
         <SignbarItems
           itemClassName={`${item} ${itemTypeSignBar}`}
@@ -29,7 +29,7 @@ function Signbar({ сlassNameFromParent }) {
 }
 
 Signbar.propTypes = {
-  сlassNameFromParent: PropTypes.string.isRequired,
+  classNameFromParent: PropTypes.string.isRequired,
 };
 
 export default Signbar;

@@ -5,13 +5,13 @@ import NavbarItems from '../NavbarItems/NavbarItems';
 import ProfileButton from '../ProfileButton/ProfileButton';
 import CLASSNAMES from '../../../utils/scripts/classnames';
 
-function Navbar({ сlassNameFromParent }) {
+function Navbar({ classNameFromParent }) {
   const {
     main, list, item, link, activeLink,
   } = CLASSNAMES.HEADER_NAVIGATION;
 
   return (
-    <nav className={`${сlassNameFromParent} ${main}`}>
+    <nav className={`${classNameFromParent} ${main}`}>
       <CustomList className={list}>
         <NavbarItems itemClassName={item} linkClassName={link} activeLinkClassName={activeLink} />
         <ProfileButton itemClassName={item} linkClassName={link} />
@@ -21,7 +21,7 @@ function Navbar({ сlassNameFromParent }) {
 }
 
 Navbar.propTypes = {
-  сlassNameFromParent: PropTypes.string.isRequired,
+  classNameFromParent: PropTypes.string.isRequired,
 };
 
 export default Navbar;
