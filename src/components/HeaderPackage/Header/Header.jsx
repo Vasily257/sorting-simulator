@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import LoggedInContext from '../../../contexts/LoggedInContext';
-import useScreenView from '../../../hooks/useScreenView';
+import React, { useState } from 'react';
+import useHeader from '../../../hooks/for-components/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 import CLASSNAMES from '../../../utils/scripts/classnames';
@@ -11,10 +10,7 @@ import './Header.css';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const { isLoggedIn } = useContext(LoggedInContext);
-  const { isDesktop } = useScreenView();
-
-  const isMenuButtonShown = isLoggedIn && !isDesktop;
+  const { isMenuButtonShown, isLoggedIn } = useHeader({ isMenuOpened, setIsMenuOpened });
 
   const { logoAlt } = TEXT_CONTENT.HEADER;
   const {
@@ -30,16 +26,14 @@ function Header() {
   const mainClassName = `${main} ${mainPositionStandart} ${isMenuOpened ? mainOverlay : ''}`;
   const navigationClassName = `${navigation} ${!isLoggedIn ? navigationTypeSignbar : ''} `;
 
-  useEffect(() => {
-    if (isDesktop) {
-      setIsMenuOpened(false);
-    }
-  }, [isDesktop, setIsMenuOpened]);
-
   return (
     <header className={mainClassName}>
       <img className={logo} src={headerLogoUrl} alt={logoAlt} />
-      <HeaderNavigation classNameFromParent={navigationClassName} isMenuOpened={isMenuOpened} />
+      <HeaderNavigation
+        classNameFromParent={navigationClassName}
+        isMenuOpened={isMenuOpened}
+        setIsMenuOpened={setIsMenuOpened}
+      />
       {isMenuButtonShown && (
         <HeaderMenuButton
           classNameFromParent={menuButton}

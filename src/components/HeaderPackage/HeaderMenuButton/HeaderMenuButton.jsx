@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CustomButton from '../../CustomButton/CustomButton';
 
-import './HeaderMenuButton.css';
+import CustomButton from '../../CustomButton/CustomButton';
 import TEXT_CONTENT from '../../../utils/scripts/text-content';
 import CLASSNAMES from '../../../utils/scripts/classnames';
+import './HeaderMenuButton.css';
 
 function HeaderMenuButton({ classNameFromParent, isMenuOpened, setIsMenuOpened }) {
   const { main, mainOpened } = CLASSNAMES.HEADER_MENU_BUTTON;
