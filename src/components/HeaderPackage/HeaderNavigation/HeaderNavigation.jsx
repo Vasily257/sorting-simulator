@@ -7,12 +7,13 @@ import Signbar from '../Signbar/Signbar';
 import './HeaderNavigation.css';
 
 function HeaderNavigation({ classNameFromParent, isMenuOpened }) {
-  const { isNavbarShown, isLoggedIn } = useHeader({ isMenuOpened });
+  const { getComponentStatuses } = useHeader({ isMenuOpened });
+  const { isNavbarShown, isSignBarShown } = getComponentStatuses();
 
   return (
     <>
-      {isLoggedIn && isNavbarShown && <Navbar classNameFromParent={classNameFromParent} />}
-      {!isLoggedIn && <Signbar classNameFromParent={classNameFromParent} />}
+      {isNavbarShown && <Navbar classNameFromParent={classNameFromParent} />}
+      {isSignBarShown && <Signbar classNameFromParent={classNameFromParent} />}
     </>
   );
 }
