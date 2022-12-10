@@ -1,5 +1,6 @@
 import useScreenView from '../useScreenView';
 import CLASSNAMES from '../../utils/scripts/classnames';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function usePromo() {
   const { isTablet } = useScreenView();
@@ -7,16 +8,17 @@ function usePromo() {
   const {
     main, title, content, pictureWrapper, picture, subtitle, button,
   } = CLASSNAMES.PROMO;
+  const {
+    titleText, subtitleText, pictureAltText, buttonText,
+  } = TEXT_CONTENT.PROMO;
 
   function getComplexClassNames() {
     const titleClassName = `${title} ${!isTablet ? visuallyHidden : ''}`;
-
     return { titleClassName };
   }
 
-  function getPromoClassNames() {
+  function getClassNames() {
     const { titleClassName } = getComplexClassNames();
-
     return {
       main,
       titleClassName,
@@ -28,8 +30,15 @@ function usePromo() {
     };
   }
 
+  function getText() {
+    return {
+      titleText, subtitleText, pictureAltText, buttonText,
+    };
+  }
+
   return {
-    getPromoClassNames,
+    getClassNames,
+    getText,
   };
 }
 
