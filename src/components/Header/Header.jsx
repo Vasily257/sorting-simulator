@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import useHeader from '../../../hooks/for-components/useHeader';
+import useHeader from '../../hooks/for-components/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
-import headerLogoUrl from '../../../images/header-logo.svg';
+import headerLogoUrl from '../../images/header-logo.svg';
 
 import './Header.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
-import CustomList from '../../CustomList/CustomList';
+import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
+import CustomList from '../CustomList/CustomList';
 import SignbarItems from '../SignbarItems/SignbarItems';
 
 function Signbar({ classNameFromParent }) {

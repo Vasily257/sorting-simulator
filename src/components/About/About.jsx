@@ -1,9 +1,9 @@
 import React from 'react';
-import Section from '../../Section/Section';
-import CustomList from '../../CustomList/CustomList';
+import Section from '../Section/Section';
+import CustomList from '../CustomList/CustomList';
 import AboutItems from '../AboutItems/AboutItems';
-import CLASSNAMES from '../../../utils/scripts/classnames';
-import TEXT_CONTENT from '../../../utils/scripts/text-content';
+import CLASSNAMES from '../../utils/scripts/classnames';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 import './About.css';
 

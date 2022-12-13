@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomList from '../../CustomList/CustomList';
-import useHistory from '../../../hooks/for-components/useHistory';
+import CustomList from '../CustomList/CustomList';
+import useHistory from '../../hooks/for-components/useHistory';
 
 function HistoryFacts({ selectedId }) {
   const { getClassNames, getItems, getText } = useHistory({ selectedId });

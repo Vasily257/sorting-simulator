@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeader from '../../../hooks/for-components/useHeader';
+import useHeader from '../../hooks/for-components/useHeader';
 import Navbar from '../Navbar/Navbar';
 import Signbar from '../Signbar/Signbar';
 

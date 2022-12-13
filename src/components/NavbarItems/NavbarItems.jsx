@@ -1,6 +1,6 @@
 import React from 'react';
-import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
-import CustomLink from '../../CustomLink/CustomLink';
+import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
+import CustomLink from '../CustomLink/CustomLink';
 
 function NavbarItems() {
   const { getClassNames, getItems } = useHeaderNavigation();

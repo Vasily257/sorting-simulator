@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomButton from '../../CustomButton/CustomButton';
-import useHistory from '../../../hooks/for-components/useHistory';
+import CustomButton from '../CustomButton/CustomButton';
+import useHistory from '../../hooks/for-components/useHistory';
 
 function HistoryYears({ selectedId, setSelectedID }) {
   const { getClassNames, getItems, getButtonActiveClassName } = useHistory({

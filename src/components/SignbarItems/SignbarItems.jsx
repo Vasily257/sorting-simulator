@@ -1,6 +1,6 @@
 import React from 'react';
-import useHeaderNavigation from '../../../hooks/for-components/useHeaderNavigation';
-import ButtonLink from '../../ButtonLink/ButtonLink';
+import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
+import ButtonLink from '../ButtonLink/ButtonLink';
 
 function SignbarItems() {
   const { getClassNames, getItems } = useHeaderNavigation();

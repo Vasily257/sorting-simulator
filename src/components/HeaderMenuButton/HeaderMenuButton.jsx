@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeaderMenuButton from '../../../hooks/for-components/useHeaderMenuButton';
-import CustomButton from '../../CustomButton/CustomButton';
+import useHeaderMenuButton from '../../hooks/for-components/useHeaderMenuButton';
+import CustomButton from '../CustomButton/CustomButton';
 import './HeaderMenuButton.css';
 
 function HeaderMenuButton({ classNameFromParent, isMenuOpened, setIsMenuOpened }) {

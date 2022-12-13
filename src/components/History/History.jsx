@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import useHistory from '../../../hooks/for-components/useHistory';
-import Section from '../../Section/Section';
-import CustomList from '../../CustomList/CustomList';
+import useHistory from '../../hooks/for-components/useHistory';
+import Section from '../Section/Section';
+import CustomList from '../CustomList/CustomList';
 import HistoryYears from '../HistoryYears/HistoryYears';
 import HistoryFacts from '../HistoryFacts/HistoryFacts';
 
