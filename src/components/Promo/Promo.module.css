@@ -1,4 +1,4 @@
-.promo {
+.base {
   display: grid;
   justify-items: center;
   row-gap: 40px;
@@ -7,23 +7,27 @@
   color: var(--dark-color);
 }
 
-.promo__title {
+.title {
   max-width: 300px;
   margin-bottom: 0;
 }
 
-.promo__picture-wrapper {
+.titleHidden {
+  composes: visually-hidden from '../../utils/styles/visually-hidden.css';
+}
+
+.pictureWrapper {
   display: block;
 }
 
-.promo__picture {
+.picture {
   display: block;
 
   width: 100%;
   height: 100%;
 }
 
-.promo__subtitle {
+.subtitle {
   max-width: 270px;
   margin: 0;
   padding: 0;
@@ -35,18 +39,18 @@
   line-height: 1.3;
 }
 
-.promo__button {
+.button {
   border-color: var(--yellow-color);
   background-color: var(--yellow-color);
 }
 
-.promo__button:hover {
+.button:hover {
   border-color: var(--yellow-color);
   background-color: var(--yellow-color);
 }
 
 @media screen and (min-width: 600px) {
-  .promo {
+  .base {
     justify-items: start;
     align-items: start;
     column-gap: 40px;
@@ -55,32 +59,32 @@
     grid-template-rows: repeat(2, auto) 1fr;
   }
 
-  .promo__title {
+  .title {
     grid-column: 1/2;
     grid-row: 1/2;
 
     max-width: 400px;
   }
 
-  .promo__picture-wrapper {
+  .pictureWrapper {
     grid-column: 2/3;
     grid-row: 1/4;
 
     max-width: 300px;
   }
 
-  .promo__picture {
+  .picture {
     border-radius: 5px;
   }
 
-  .promo__subtitle {
+  .subtitle {
     grid-column: 1/2;
     grid-row: 2/3;
 
     text-align: left;
   }
 
-  .promo__button {
+  .button {
     align-self: end;
     grid-column: 1/2;
     grid-row: 3/4;
@@ -90,11 +94,11 @@
 }
 
 @media screen and (min-width: 900px) {
-  .promo__picture-wrapper {
+  .pictureWrapper {
     max-width: 400px;
   }
 
-  .promo__subtitle {
+  .subtitle {
     max-width: 300px;
   }
 }
