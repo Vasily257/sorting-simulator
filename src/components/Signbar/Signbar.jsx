@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
 import CustomList from '../CustomList/CustomList';
 import SignbarItems from '../SignbarItems/SignbarItems';
 
-function Signbar({ classNameFromParent }) {
-  const { getClassNames } = useHeaderNavigation();
+function Signbar({ classNameFromParent, styles }) {
   const {
-    main, list, mainTypeSignBar, listTypeSignBar,
-  } = getClassNames();
+    main, mainTypeSignbar, list, listTypeSignbar,
+  } = styles;
 
   return (
-    <nav className={`${classNameFromParent} ${main} ${mainTypeSignBar}`}>
-      <CustomList className={`${list} ${listTypeSignBar}`}>
-        <SignbarItems />
+    <nav className={`${classNameFromParent} ${main} ${mainTypeSignbar}`}>
+      <CustomList className={`${list} ${listTypeSignbar}`}>
+        <SignbarItems styles={styles} />
       </CustomList>
     </nav>
   );
@@ -21,6 +19,7 @@ function Signbar({ classNameFromParent }) {
 
 Signbar.propTypes = {
   classNameFromParent: PropTypes.string.isRequired,
+  styles: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default Signbar;

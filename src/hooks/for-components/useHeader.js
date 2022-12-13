@@ -1,63 +1,40 @@
 import { useContext, useEffect } from 'react';
 import LoggedInContext from '../../contexts/LoggedInContext';
 import useScreenView from '../useScreenView';
-import CLASSNAMES from '../../utils/scripts/classnames';
-import TEXT_CONTENT from '../../utils/scripts/text-content';
 
-function useHeader({ isMenuOpened, setIsMenuOpened }) {
+function useHeader({ setIsMenuOpened, styles }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop, isTablet, isMobile } = useScreenView();
 
   const {
-    main,
-    mainPositionStandart,
-    mainOverlay,
-    navigation,
-    navigationTypeSignbar,
-    logo,
-    menuButton,
-  } = CLASSNAMES.HEADER;
+    main, mainPositionStandart, mainOverlay, navigation, navigationTypeSignbar,
+  } = styles;
 
-  function getComplexClassNames() {
-    const mainClassName = `${main} ${mainPositionStandart} ${isMenuOpened ? mainOverlay : ''}`;
-    const navigationClassName = `${navigation} ${!isLoggedIn ? navigationTypeSignbar : ''} `;
-
-    return { mainClassName, navigationClassName };
-  }
-
-  function getClassNames() {
-    const { mainClassName, navigationClassName } = getComplexClassNames();
-
-    return {
-      logo,
-      menuButton,
-      mainClassName,
-      navigationClassName,
-    };
-  }
-
-  function getComponentStatuses() {
+  function getComponentStatuses(isMenuOpened) {
     const isMenuButtonShown = isLoggedIn && !isDesktop;
     const isNavbarShown = isLoggedIn && (isDesktop || (isMenuOpened && (isTablet || isMobile)));
     const isSignBarShown = !isLoggedIn;
+
     return { isMenuButtonShown, isNavbarShown, isSignBarShown };
   }
 
-  function getLogoAltText() {
-    const { logoAltText } = TEXT_CONTENT.HEADER;
-    return { logoAltText };
+  function getComplexClassNames(isMenuOpened) {
+    const mainHeaderClassName = `${main} ${mainPositionStandart} `;
+    const headerClassName = `${mainHeaderClassName} ${isMenuOpened ? mainOverlay : ''}`;
+    const navigationClassName = `${navigation} ${!isLoggedIn ? navigationTypeSignbar : ''} `;
+
+    return { headerClassName, navigationClassName };
   }
 
   useEffect(() => {
-    if (isDesktop && setIsMenuOpened !== undefined) {
+    if (isDesktop) {
       setIsMenuOpened(false);
     }
   }, [isDesktop, setIsMenuOpened]);
 
   return {
-    getClassNames,
+    getComplexClassNames,
     getComponentStatuses,
-    getLogoAltText,
   };
 }
 

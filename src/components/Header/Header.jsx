@@ -3,32 +3,29 @@ import useHeader from '../../hooks/for-components/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 import headerLogoUrl from '../../images/header-logo.svg';
-
-import './Header.css';
+import styles from './Header.module.css';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-  const { getComponentStatuses, getClassNames, getLogoAltText } = useHeader({
-    isMenuOpened,
-    setIsMenuOpened,
-  });
-  const {
-    logo, menuButton, mainClassName, navigationClassName,
-  } = getClassNames();
-  const { isMenuButtonShown } = getComponentStatuses();
-  const { logoAltText } = getLogoAltText();
+  const { getComponentStatuses, getComplexClassNames } = useHeader({ setIsMenuOpened, styles });
+  const { isMenuButtonShown, isNavbarShown, isSignBarShown } = getComponentStatuses(isMenuOpened);
+  const { headerClassName, navigationClassName } = getComplexClassNames(isMenuOpened);
+
+  const { logo } = styles;
+  const { logoAltText } = TEXT_CONTENT.HEADER;
 
   return (
-    <header className={mainClassName}>
+    <header className={headerClassName}>
       <img className={logo} src={headerLogoUrl} alt={logoAltText} />
-      <HeaderNavigation classNameFromParent={navigationClassName} isMenuOpened={isMenuOpened} />
+      <HeaderNavigation
+        classNameFromParent={navigationClassName}
+        isNavbarShown={isNavbarShown}
+        isSignBarShown={isSignBarShown}
+      />
       {isMenuButtonShown && (
-        <HeaderMenuButton
-          classNameFromParent={menuButton}
-          isMenuOpened={isMenuOpened}
-          setIsMenuOpened={setIsMenuOpened}
-        />
+        <HeaderMenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
       )}
     </header>
   );

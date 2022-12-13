@@ -8,7 +8,7 @@
   }
 }
 
-.header-navigation {
+.main {
   position: relative;
 
   animation-name: smooth-appearance;
@@ -18,19 +18,19 @@
   background-color: #ffffff;
 }
 
-.header-navigation_type_signbar {
+.mainTypeSignbar {
   background-color: transparent;
 }
 
-.header-navigation__list {
+.list {
   align-items: center;
 }
 
-.header-navigation__list_type_signbar {
+.listTypeSignbar {
   flex-direction: row;
 }
 
-.header-navigation__item {
+.item {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -38,28 +38,28 @@
   margin-top: 20px;
 }
 
-.header-navigation__item:last-child {
+.item:last-child {
   margin-top: 60px;
 }
 
-.header-navigation__item_type_signbar {
+.itemTypeSignbar {
   margin-top: 0;
   margin-right: 10px;
 }
 
-.header-navigation__item_type_signbar:last-child {
+.itemTypeSignbar:last-child {
   margin-top: 0;
   margin-right: 0;
 }
 
-.header-navigation__link {
+.link {
   position: relative;
 
   font-size: 18px;
   font-weight: 500;
 }
 
-.header-navigation__link_active::after {
+.linkActive::after {
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -73,30 +73,30 @@
   border-bottom: 1px solid var(--green-color);
 }
 
-.header-navigation__link_type_signbar {
+.linkTypeSignbar {
   font-size: 12px;
 }
 
 @media screen and (min-width: 900px) {
-  .header-navigation {
+  .main {
     background-color: transparent;
   }
 
-  .header-navigation__list {
+  .list {
     flex-direction: row;
   }
 
-  .header-navigation__item {
+  .item {
     margin-top: 0;
     margin-right: 10px;
   }
 
-  .header-navigation__item:last-child {
+  .item:last-child {
     margin-top: 0;
     margin-right: 0;
   }
 
-  .header-navigation__link {
+  .link {
     font-size: 14px;
   }
 }

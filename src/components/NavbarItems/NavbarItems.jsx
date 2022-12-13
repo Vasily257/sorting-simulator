@@ -1,11 +1,11 @@
 import React from 'react';
-import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
+import PropTypes from 'prop-types';
 import CustomLink from '../CustomLink/CustomLink';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
-function NavbarItems() {
-  const { getClassNames, getItems } = useHeaderNavigation();
-  const { item, link, activeLink } = getClassNames();
-  const { navbarItems } = getItems();
+function NavbarItems({ styles }) {
+  const { item, link, activeLink } = styles;
+  const { navbarItems } = TEXT_CONTENT.HEADER_NAVIGATION;
 
   return navbarItems.map(({ id, text, path }) => (
     <li key={id} className={item}>
@@ -15,5 +15,9 @@ function NavbarItems() {
     </li>
   ));
 }
+
+NavbarItems.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default NavbarItems;

@@ -5,7 +5,7 @@
 
 const TEXT_CONTENT = {
   HEADER: {
-    logoAlttext: 'Логотип сайта',
+    logoAltText: 'Логотип сайта',
   },
 
   HEADER_NAVIGATION: {

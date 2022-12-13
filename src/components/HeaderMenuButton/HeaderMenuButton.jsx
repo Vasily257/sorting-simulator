@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeaderMenuButton from '../../hooks/for-components/useHeaderMenuButton';
 import CustomButton from '../CustomButton/CustomButton';
-import './HeaderMenuButton.css';
+import styles from './HeaderMenuButton.module.css';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
-function HeaderMenuButton({ classNameFromParent, isMenuOpened, setIsMenuOpened }) {
-  const { getClassNames, getAriaLabelText } = useHeaderMenuButton({
-    classNameFromParent,
-    isMenuOpened,
-  });
-  const { mainClassName } = getClassNames();
-  const { close, open } = getAriaLabelText();
+function HeaderMenuButton({ isMenuOpened, setIsMenuOpened }) {
+  const { main, mainOpened } = styles;
+  const mainClassName = `${main} ${isMenuOpened ? mainOpened : ''}`;
+
+  const { ariaLabelText } = TEXT_CONTENT.HEADER_MENU_BUTTON;
+  const { close, open } = ariaLabelText;
 
   return (
     <CustomButton
@@ -22,7 +21,6 @@ function HeaderMenuButton({ classNameFromParent, isMenuOpened, setIsMenuOpened }
 }
 
 HeaderMenuButton.propTypes = {
-  classNameFromParent: PropTypes.string.isRequired,
   isMenuOpened: PropTypes.bool.isRequired,
   setIsMenuOpened: PropTypes.func.isRequired,
 };

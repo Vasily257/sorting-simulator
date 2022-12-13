@@ -1,11 +1,12 @@
 import React from 'react';
-import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
+import PropTypes from 'prop-types';
 import ButtonLink from '../ButtonLink/ButtonLink';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
-function ProfileButton() {
-  const { getClassNames, getProfileButtonInfo } = useHeaderNavigation();
-  const { item, link } = getClassNames();
-  const { text, type, path } = getProfileButtonInfo();
+function ProfileButton({ styles }) {
+  const { item, link } = styles;
+  const { profileButton } = TEXT_CONTENT.HEADER_NAVIGATION;
+  const { text, type, path } = profileButton;
 
   return (
     <li className={item}>
@@ -13,5 +14,9 @@ function ProfileButton() {
     </li>
   );
 }
+
+ProfileButton.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default ProfileButton;

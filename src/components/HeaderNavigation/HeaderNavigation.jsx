@@ -1,26 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeader from '../../hooks/for-components/useHeader';
 import Navbar from '../Navbar/Navbar';
 import Signbar from '../Signbar/Signbar';
+import styles from './HeaderNavigation.module.css';
 
-import './HeaderNavigation.css';
-
-function HeaderNavigation({ classNameFromParent, isMenuOpened }) {
-  const { getComponentStatuses } = useHeader({ isMenuOpened });
-  const { isNavbarShown, isSignBarShown } = getComponentStatuses();
-
+function HeaderNavigation({ classNameFromParent, isNavbarShown, isSignBarShown }) {
   return (
     <>
-      {isNavbarShown && <Navbar classNameFromParent={classNameFromParent} />}
-      {isSignBarShown && <Signbar classNameFromParent={classNameFromParent} />}
+      {isNavbarShown && <Navbar classNameFromParent={classNameFromParent} styles={styles} />}
+      {isSignBarShown && <Signbar classNameFromParent={classNameFromParent} styles={styles} />}
     </>
   );
 }
 
 HeaderNavigation.propTypes = {
   classNameFromParent: PropTypes.string.isRequired,
-  isMenuOpened: PropTypes.bool.isRequired,
+  isNavbarShown: PropTypes.bool.isRequired,
+  isSignBarShown: PropTypes.bool.isRequired,
 };
 
 export default HeaderNavigation;

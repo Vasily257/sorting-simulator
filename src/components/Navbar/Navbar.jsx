@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useHeaderNavigation from '../../hooks/for-components/useHeaderNavigation';
 import CustomList from '../CustomList/CustomList';
 import NavbarItems from '../NavbarItems/NavbarItems';
 import ProfileButton from '../ProfileButton/ProfileButton';
 
-function Navbar({ classNameFromParent }) {
-  const { getClassNames } = useHeaderNavigation();
-  const { main, list } = getClassNames();
+function Navbar({ classNameFromParent, styles }) {
+  const { main, list } = styles;
 
   return (
     <nav className={`${classNameFromParent} ${main}`}>
       <CustomList className={list}>
-        <NavbarItems />
-        <ProfileButton />
+        <NavbarItems styles={styles} />
+        <ProfileButton styles={styles} />
       </CustomList>
     </nav>
   );
@@ -21,6 +19,7 @@ function Navbar({ classNameFromParent }) {
 
 Navbar.propTypes = {
   classNameFromParent: PropTypes.string.isRequired,
+  styles: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default Navbar;
