@@ -8,13 +8,6 @@ const CLASSNAMES = {
     titleLevelFirst: 'section__title_level_first',
     titleLevelSecond: 'section__title_level_second',
   },
-  ABOUT: {
-    main: 'about',
-    list: 'about__list',
-    item: 'about__item',
-    subtitle: 'about__subtitle',
-    description: 'about__description',
-  },
   HISTORY: {
     mainClass: 'history',
     titleClass: 'history__title',

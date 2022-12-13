@@ -1,14 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
-function AboutItems({
-  items, itemClassName, subtitleClassName, descriptionClassName,
-}) {
-  return items.map(({ id, subtitle, description }) => (
-    <li key={id} className={itemClassName}>
-      <h3 className={subtitleClassName}>{subtitle}</h3>
-      <p className={descriptionClassName}>{description}</p>
+function AboutItems({ styles }) {
+  const { item, subtitle, description } = styles;
+  const { items } = TEXT_CONTENT.ABOUT;
+
+  return items.map(({ id, subtitleText, descriptionText }) => (
+    <li key={id} className={item}>
+      <h3 className={subtitle}>{subtitleText}</h3>
+      <p className={description}>{descriptionText}</p>
     </li>
   ));
 }
+
+AboutItems.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default AboutItems;

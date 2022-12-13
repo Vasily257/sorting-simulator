@@ -1,8 +1,8 @@
-.about {
+.base {
   position: relative;
 }
 
-.about__item {
+.item {
   display: grid;
   justify-content: start;
   align-items: start;
@@ -13,11 +13,11 @@
   margin-bottom: 15px;
 }
 
-.about__item:last-child {
+.item:last-child {
   margin-bottom: 0;
 }
 
-.about__item::before {
+.item::before {
   position: relative;
 
   display: block;
@@ -35,19 +35,19 @@
   background-size: cover;
 }
 
-.about__item:nth-child(1)::before {
+.item:nth-child(1)::before {
   background-image: url('../../images/about/question.svg');
 }
 
-.about__item:nth-child(2)::before {
+.item:nth-child(2)::before {
   background-image: url('../../images/about/target.svg');
 }
 
-.about__item:nth-child(3)::before {
+.item:nth-child(3)::before {
   background-image: url('../../images/about/users.svg');
 }
 
-.about__subtitle {
+.subtitle {
   grid-column: 2/3;
   grid-row: 1/2;
 
@@ -58,7 +58,7 @@
   font-weight: 700;
 }
 
-.about__description {
+.description {
   grid-column: 2/3;
   grid-row: 2/3;
 
@@ -67,18 +67,18 @@
 }
 
 @media screen and (min-width: 900px) {
-  .about__item {
+  .item {
     column-gap: 12px;
 
     margin-bottom: 20px;
   }
 
-  .about__item::before {
+  .item::before {
     width: 35px;
     height: 35px;
   }
 
-  .about__subtitle {
+  .subtitle {
     font-size: 16px;
   }
 }
