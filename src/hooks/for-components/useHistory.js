@@ -1,55 +1,18 @@
-import CLASSNAMES from '../../utils/scripts/classnames';
-import TEXT_CONTENT from '../../utils/scripts/text-content';
+function useHistory({ styles }) {
+  const { yearButton, yearButtonActive } = styles;
 
-function useHistory({ selectedId }) {
-  const {
-    mainClass,
-    titleClass,
-    contentClass,
-    yearsClass,
-    yearClass,
-    yearButtonClass,
-    activeYearButtonClass,
-    yearButtonTextClass,
-    factsClass,
-    factClass,
-    factTextClass,
-  } = CLASSNAMES.HISTORY;
-  const { titleText, factsAriaLabelText, yearFacts } = TEXT_CONTENT.HISTORY;
-
-  function getButtonActiveClassName(id) {
-    if (selectedId === id) return activeYearButtonClass;
-    return '';
+  function getButtonClassName(buttonId, selectedId) {
+    if (buttonId === selectedId) return yearButtonActive;
+    return yearButton;
   }
 
-  function getClassNames() {
-    return {
-      mainClass,
-      titleClass,
-      contentClass,
-      yearsClass,
-      yearClass,
-      yearButtonClass,
-      yearButtonTextClass,
-      factsClass,
-      factClass,
-      factTextClass,
-    };
-  }
-
-  function getItems() {
-    return { yearFacts };
-  }
-
-  function getText() {
-    return { titleText, factsAriaLabelText };
+  function getFiltredYearFacts({ yearFacts, selectedId }) {
+    return yearFacts.filter(({ id }) => id === selectedId);
   }
 
   return {
-    getClassNames,
-    getButtonActiveClassName,
-    getItems,
-    getText,
+    getButtonClassName,
+    getFiltredYearFacts,
   };
 }
 

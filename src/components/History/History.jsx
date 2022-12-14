@@ -1,32 +1,24 @@
 import React, { useState } from 'react';
-import useHistory from '../../hooks/for-components/useHistory';
 import Section from '../Section/Section';
 import CustomList from '../CustomList/CustomList';
 import HistoryYears from '../HistoryYears/HistoryYears';
-import HistoryFacts from '../HistoryFacts/HistoryFacts';
-
-import './History.css';
+import HistoryFacts from '../HistoryFactList/HistoryFactList';
+import styles from './History.module.css';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function History() {
   const [selectedId, setSelectedID] = useState(0);
 
-  const { getClassNames, getText } = useHistory({ selectedId });
-  const {
-    mainClass, titleClass, contentClass, yearsClass,
-  } = getClassNames();
-  const { titleText } = getText();
+  const { content, years } = styles;
+  const { titleText } = TEXT_CONTENT.HISTORY;
 
   return (
-    <Section
-      titleText={titleText}
-      sectionClassNameFromChild={mainClass}
-      titleClassNameFromChild={titleClass}
-    >
-      <div className={contentClass}>
-        <CustomList className={yearsClass}>
-          <HistoryYears selectedId={selectedId} setSelectedID={setSelectedID} />
+    <Section titleText={titleText}>
+      <div className={content}>
+        <CustomList className={years}>
+          <HistoryYears selectedId={selectedId} setSelectedID={setSelectedID} styles={styles} />
         </CustomList>
-        <HistoryFacts selectedId={selectedId} />
+        <HistoryFacts selectedId={selectedId} styles={styles} />
       </div>
     </Section>
   );
