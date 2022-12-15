@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Section from '../Section/Section';
 import CustomList from '../CustomList/CustomList';
 import HistoryYears from '../HistoryYears/HistoryYears';
-import HistoryFacts from '../HistoryFactList/HistoryFactList';
+import HistoryFactList from '../HistoryFactList/HistoryFactList';
 import styles from './History.module.css';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
 
@@ -18,7 +18,7 @@ function History() {
         <CustomList className={years}>
           <HistoryYears selectedId={selectedId} setSelectedID={setSelectedID} styles={styles} />
         </CustomList>
-        <HistoryFacts selectedId={selectedId} styles={styles} />
+        <HistoryFactList selectedId={selectedId} styles={styles} />
       </div>
     </Section>
   );

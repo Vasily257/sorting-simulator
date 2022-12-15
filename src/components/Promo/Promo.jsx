@@ -8,7 +8,7 @@ import promoPictureWebp from '../../images/promo/promo-picture.webp';
 import promoPicturePng from '../../images/promo/promo-picture.png';
 
 function Promo() {
-  const { getComplexClassNames } = usePromo();
+  const { getComplexClassNames } = usePromo({ styles });
   const { titleClassName } = getComplexClassNames();
   const {
     base, content, pictureWrapper, picture, subtitle, button,
@@ -20,10 +20,10 @@ function Promo() {
   return (
     <Section
       titleText={titleText}
-      isMainSection
       sectionClassNameFromChild={base}
       titleClassNameFromChild={titleClassName}
       contentClassNameFromChild={content}
+      isMainSection
     >
       <picture className={pictureWrapper}>
         <source srcSet={promoPictureWebp} />

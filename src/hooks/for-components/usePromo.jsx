@@ -1,7 +1,6 @@
 import useScreenView from '../useScreenView';
-import styles from '../../components/Promo/Promo.module.css';
 
-function usePromo() {
+function usePromo({ styles }) {
   const { isTablet } = useScreenView();
   const { title, titleHidden } = styles;
 
