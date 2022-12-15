@@ -4,7 +4,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import useHistory from '../../hooks/for-components/useHistory';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
 
-function HistoryYears({ selectedId, setSelectedID, styles }) {
+function HistoryYearItems({ selectedId, setSelectedID, styles }) {
   const { getButtonClassName } = useHistory({ styles });
 
   const { year, yearButtonText } = styles;
@@ -23,10 +23,10 @@ function HistoryYears({ selectedId, setSelectedID, styles }) {
   ));
 }
 
-HistoryYears.propTypes = {
+HistoryYearItems.propTypes = {
   selectedId: PropTypes.number.isRequired,
   setSelectedID: PropTypes.func.isRequired,
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default HistoryYears;
+export default HistoryYearItems;
