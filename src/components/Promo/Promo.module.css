@@ -1,4 +1,4 @@
-.base {
+.content {
   display: grid;
   justify-items: center;
   row-gap: 40px;
@@ -9,7 +9,14 @@
 
 .title {
   max-width: 300px;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
 .titleHidden {
@@ -50,7 +57,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .base {
+  .content {
     justify-items: start;
     align-items: start;
     column-gap: 40px;
@@ -64,6 +71,10 @@
     grid-row: 1/2;
 
     max-width: 400px;
+
+    text-align: left;
+
+    font-size: 25px;
   }
 
   .pictureWrapper {
@@ -94,6 +105,10 @@
 }
 
 @media screen and (min-width: 900px) {
+  .title {
+    font-size: 30px;
+  }
+
   .pictureWrapper {
     max-width: 400px;
   }

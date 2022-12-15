@@ -11,28 +11,26 @@ function Promo() {
   const { getComplexClassNames } = usePromo({ styles });
   const { titleClassName } = getComplexClassNames();
   const {
-    base, content, pictureWrapper, picture, subtitle, button,
+    content, pictureWrapper, picture, subtitle, button,
   } = styles;
+
   const {
     titleText, subtitleText, pictureAltText, buttonText,
   } = TEXT_CONTENT.PROMO;
 
   return (
-    <Section
-      titleText={titleText}
-      sectionClassNameFromChild={base}
-      titleClassNameFromChild={titleClassName}
-      contentClassNameFromChild={content}
-      isMainSection
-    >
-      <picture className={pictureWrapper}>
-        <source srcSet={promoPictureWebp} />
-        <img className={picture} src={promoPicturePng} alt={pictureAltText} />
-      </picture>
-      <p className={subtitle}>{subtitleText}</p>
-      <CustomButton className={button} isClassicStyle>
-        {buttonText}
-      </CustomButton>
+    <Section isMainSection>
+      <div className={content}>
+        <h1 className={titleClassName}>{titleText}</h1>
+        <picture className={pictureWrapper}>
+          <source srcSet={promoPictureWebp} />
+          <img className={picture} src={promoPicturePng} alt={pictureAltText} />
+        </picture>
+        <p className={subtitle}>{subtitleText}</p>
+        <CustomButton className={button} isClassicStyle>
+          {buttonText}
+        </CustomButton>
+      </div>
     </Section>
   );
 }
