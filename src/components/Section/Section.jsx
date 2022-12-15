@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Section.module.css';
 import useSection from '../../hooks/for-components/useSection';
-
-import './Section.css';
 
 function Section({
   titleText,
-  isMainSection,
   sectionClassNameFromChild,
   titleClassNameFromChild,
+  isMainSection,
   children,
 }) {
   const { getComplexClassNames, getTitleMakrup } = useSection({
@@ -16,6 +15,7 @@ function Section({
     isMainSection,
     sectionClassNameFromChild,
     titleClassNameFromChild,
+    styles,
   });
 
   const { sectionClassName } = getComplexClassNames();
@@ -39,9 +39,9 @@ Section.propTypes = {
 
 Section.defaultProps = {
   titleText: '',
-  isMainSection: false,
   sectionClassNameFromChild: '',
   titleClassNameFromChild: '',
+  isMainSection: false,
 };
 
 export default Section;

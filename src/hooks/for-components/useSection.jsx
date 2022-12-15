@@ -1,18 +1,18 @@
 import React from 'react';
-import CLASSNAMES from '../../utils/scripts/classnames';
 
 function useSection({
   titleText,
   isMainSection,
   sectionClassNameFromChild,
   titleClassNameFromChild,
+  styles,
 }) {
   const {
-    main, title, titleLevelFirst, titleLevelSecond,
-  } = CLASSNAMES.SECTION;
+    base, title, titleLevelFirst, titleLevelSecond,
+  } = styles;
 
   function getComplexClassNames() {
-    const sectionClassName = `${main} ${sectionClassNameFromChild}`;
+    const sectionClassName = `${base} ${sectionClassNameFromChild}`;
     const firstLevelTitleClassName = `${title} ${titleLevelFirst} ${titleClassNameFromChild}`;
     const secondLevelTitleClassName = `${title} ${titleLevelSecond} ${titleClassNameFromChild}`;
 

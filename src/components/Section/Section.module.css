@@ -1,4 +1,4 @@
-section {
+.base {
   position: relative;
 
   padding: 20px;
@@ -8,7 +8,7 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.section__title {
+.title {
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
@@ -16,7 +16,7 @@ section {
   color: inherit;
 }
 
-.section__title_level_first {
+.titleLevelFirst {
   text-align: center;
 
   font-size: 20px;
@@ -24,13 +24,13 @@ section {
   line-height: 1.15;
 }
 
-.section__title_level_second {
+.titleLevelSecond {
   font-size: 20px;
   font-weight: 500;
 }
 
 @media screen and (min-width: 600px) {
-  .section__title_level_first {
+  .titleLevelFirst {
     text-align: left;
 
     font-size: 25px;
@@ -38,15 +38,15 @@ section {
 }
 
 @media screen and (min-width: 900px) {
-  .section__title {
+  .title {
     margin-bottom: 30px;
   }
 
-  .section__title_level_first {
+  .titleLevelFirst {
     font-size: 30px;
   }
 
-  .section__title_level_second {
+  .titleLevelSecond {
     font-size: 24px;
   }
 }
