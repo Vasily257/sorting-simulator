@@ -39,7 +39,7 @@
   transition: opacity 0.5s;
 
   opacity: 1;
-  color: var(--dark-color);
+  color: currentColor;
   border-width: 1px;
   border-style: solid;
   border-radius: 1.5em;
