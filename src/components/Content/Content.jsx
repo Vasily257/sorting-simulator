@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Content.css';
 
 function Content({ children }) {
-  return <main className="content content_position_standart">{children}</main>;
+  return <main className="content">{children}</main>;
 }
 
 Content.propTypes = {
