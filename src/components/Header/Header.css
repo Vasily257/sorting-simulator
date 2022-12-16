@@ -1,42 +1,27 @@
-.main {
+.header {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
 
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 900px;
-  padding: 10px 20px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--regular-grey-color);
 }
 
-.main::before {
+.header::before {
   position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 50%;
-
-  width: 100vw;
-  height: 100%;
-
-  content: '';
-  transform: translateX(-50%);
-
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.main::after {
-  position: fixed;
-  z-index: -1;
   top: 0;
   left: 0;
 
   display: block;
   visibility: hidden;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   content: '';
   transition: opacity 0.25s, visibility 0.25s;
@@ -45,28 +30,19 @@
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-.mainPositionStandart {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 50%;
-
-  transform: translateX(-50%);
-}
-
-.mainOverlay::after {
+.header_overlay::before {
   visibility: visible;
 
   opacity: 1;
 }
 
-.logo {
+.header__logo {
   width: auto;
   height: 32px;
   margin-right: auto;
 }
 
-.navigation {
+.header__navigation {
   position: fixed;
   top: 0;
   right: 0;
@@ -79,19 +55,35 @@
   border-radius: 0 0 10px 10px;
 }
 
-.navigationTypeSignbar {
+.header__navigation_type_signbar {
   position: relative;
 
   max-width: max-content;
   padding: 0;
 }
 
+.header__menu-button {
+  position: relative;
+}
+
+.header__menu-button_opened {
+  position: fixed;
+  top: calc(20px + 4px);
+  right: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .header__menu-button_opened {
+    right: 40px;
+  }
+}
+
 @media screen and (min-width: 900px) {
-  .logo {
+  .header__logo {
     height: 37px;
   }
 
-  .navigation {
+  .header__navigation {
     position: relative;
 
     max-width: max-content;

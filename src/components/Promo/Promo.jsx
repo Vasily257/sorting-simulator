@@ -1,37 +1,32 @@
 import React from 'react';
-import usePromo from '../../hooks/for-components/usePromo';
-import Section from '../Section/Section';
+
 import CustomButton from '../CustomButton/CustomButton';
-import styles from './Promo.module.css';
-import TEXT_CONTENT from '../../utils/scripts/text-content';
-import promoPictureWebp from '../../images/promo/promo-picture.webp';
-import promoPicturePng from '../../images/promo/promo-picture.png';
+
+import promoPictureWebp from '../../images/promo/promo-image.webp';
+import promoPictureJpg from '../../images/promo/promo-image.jpg';
+
+import './Promo.css';
 
 function Promo() {
-  const { getComplexClassNames } = usePromo({ styles });
-  const { titleClassName } = getComplexClassNames();
-  const {
-    content, pictureWrapper, picture, subtitle, button,
-  } = styles;
-
-  const {
-    titleText, subtitleText, pictureAltText, buttonText,
-  } = TEXT_CONTENT.PROMO;
-
   return (
-    <Section isMainSection>
-      <div className={content}>
-        <h1 className={titleClassName}>{titleText}</h1>
-        <picture className={pictureWrapper}>
-          <source srcSet={promoPictureWebp} />
-          <img className={picture} src={promoPicturePng} alt={pictureAltText} />
-        </picture>
-        <p className={subtitle}>{subtitleText}</p>
-        <CustomButton className={button} isClassicStyle>
-          {buttonText}
-        </CustomButton>
-      </div>
-    </Section>
+    <section className="promo">
+      <h1 className="promo__title">Вторсырьё на&nbsp;благотворительность</h1>
+      <picture className="promo__picture-wrapper">
+        <source srcSet={promoPictureWebp} />
+        <img
+          className="promo__picture"
+          src={promoPictureJpg}
+          alt="Логотип движения Вторсырьё на благотворительность"
+        />
+      </picture>
+      <p className="promo__subtitle">
+        Страница движения &laquo;ВнБ Самара&raquo;, где можно подробнее узнать про движение,
+        а&nbsp;также найти полезную информацию по&nbsp;раздельному сбору отходов.
+      </p>
+      <CustomButton className="button promo__button" isClassicStyle>
+        Узнать больше
+      </CustomButton>
+    </section>
   );
 }
 

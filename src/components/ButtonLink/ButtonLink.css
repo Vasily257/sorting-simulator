@@ -5,8 +5,6 @@
   border-style: solid;
   border-color: var(--dark-color);
   border-radius: 1.5em;
-
-  line-height: 1;
 }
 
 .button-link_type_profile::before {
