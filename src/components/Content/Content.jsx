@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import './Content.css';
+import styles from './Content.module.css';
 
 function Content({ children }) {
-  return <main className="content content_position_standart">{children}</main>;
+  return <main className={styles.basePositionStandart}>{children}</main>;
 }
 
 Content.propTypes = {

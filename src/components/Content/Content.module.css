@@ -1,4 +1,4 @@
-.content {
+.base {
   position: relative;
 
   display: grid;
@@ -6,12 +6,14 @@
   grid-template-columns: auto;
 }
 
-.content_position_standart {
+.basePositionStandart {
+  composes: base;
+
   margin-top: calc(52px + 20px);
 }
 
 @media screen and (min-width: 900px) {
-  .content_position_standart {
+  .basePositionStandart {
     margin-top: calc(57px + 20px);
   }
 }
