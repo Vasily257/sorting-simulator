@@ -5,6 +5,7 @@
   flex-wrap: nowrap;
 
   padding-bottom: 10px;
+}
 
 .base::before {
   position: fixed;
