@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import useButtonLink from '../../hooks/useButtonLink';
 import CustomLink from '../CustomLink/CustomLink';
-
-import getTypeClassName from '../../utils/scripts/utils';
-
-import './ButtonLink.css';
+import styles from './ButtonLink.module.css';
 
 function ButtonLink({
   path, className, type, text,
 }) {
-  const { typeClassName, typeActiveClassName } = getTypeClassName(type);
-  const finalClassName = `button-link ${typeClassName} ${className} `;
+  const { typeClassName, typeActiveClassName } = useButtonLink({ className, type, styles });
 
   return (
-    <CustomLink path={path} className={finalClassName} activeClassName={typeActiveClassName}>
+    <CustomLink path={path} className={typeClassName} activeClassName={typeActiveClassName}>
       {text}
     </CustomLink>
   );

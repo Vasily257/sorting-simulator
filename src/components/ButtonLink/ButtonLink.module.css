@@ -1,4 +1,4 @@
-.button-link {
+.base {
   padding: 0.75em 1.5em;
 
   border-width: 1px;
@@ -9,7 +9,11 @@
   line-height: 1;
 }
 
-.button-link_type_profile::before {
+.profile {
+  composes: base;
+}
+
+.profile::before {
   display: inline-block;
 
   width: 0.75em;
@@ -24,25 +28,37 @@
   background-size: cover;
 }
 
-.button-link_type_profile-active {
+.profileActive {
+  composes: profile;
+
   border-color: var(--green-color);
 }
 
-.button-link_type_profile-active::before {
+.profileActive::before {
   background-image: url('../../images/profile-active.svg');
 }
 
-.button-link_type_register-active {
+.register {
+  composes: base;
+}
+
+.registerActive {
+  composes: register;
+
   border-color: var(--green-color);
 }
 
-.button-link_type_login {
+.login {
+  composes: base;
+
   color: #ffffff;
   border-color: var(--blue-color);
   background-color: var(--blue-color);
 }
 
-.button-link_type_login-active {
+.loginActive {
+  composes: login;
+
   color: inherit;
   background-color: transparent;
 }
