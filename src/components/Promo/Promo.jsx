@@ -1,10 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import usePromo from '../../hooks/usePromo';
 import Section from '../Section/Section';
-=======
-
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c
 import CustomButton from '../CustomButton/CustomButton';
 
 import promoPictureWebp from '../../images/promo/promo-image.webp';

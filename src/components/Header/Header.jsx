@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import useScreenView from '../../hooks/useScreenView';
 import useHeader from '../../hooks/useHeader';
-=======
-import React, { useState, useContext } from 'react';
-
-import LoggedInContext from '../../contexts/LoggedInContext';
-
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
 
@@ -17,7 +10,6 @@ import './Header.css';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-<<<<<<< HEAD
   const { isDesktop } = useScreenView();
 
   const { getComponentStatuses, getComplexClassNames } = useHeader({ styles });
@@ -26,9 +18,6 @@ function Header() {
 
   const { logo } = styles;
   const { logoAltText } = TEXT_CONTENT.HEADER;
-=======
-  const { isLoggedIn } = useContext(LoggedInContext);
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c
 
   useEffect(() => {
     if (isDesktop) {

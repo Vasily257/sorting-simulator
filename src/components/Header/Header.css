@@ -1,11 +1,4 @@
-<<<<<<< HEAD:src/components/Header/Header.module.css
 .base {
-=======
-.header {
-  position: relative;
-  z-index: 1;
-
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c:src/components/Header/Header.css
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -13,7 +6,6 @@
 
   padding-bottom: 10px;
 
-<<<<<<< HEAD:src/components/Header/Header.module.css
 .base::before {
   position: fixed;
   z-index: -1;
@@ -31,12 +23,6 @@
 }
 
 .base::after {
-=======
-  border-bottom: 1px solid var(--regular-grey-color);
-}
-
-.header::before {
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c:src/components/Header/Header.css
   position: fixed;
   top: 0;
   left: 0;
@@ -54,7 +40,6 @@
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-<<<<<<< HEAD:src/components/Header/Header.module.css
 .basePositionStandart {
   composes: base;
 
@@ -71,9 +56,6 @@
 }
 
 .baseOverlay::after {
-=======
-.header_overlay::before {
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c:src/components/Header/Header.css
   visibility: visible;
 
   opacity: 1;
@@ -98,13 +80,9 @@
   border-radius: 0 0 10px 10px;
 }
 
-<<<<<<< HEAD:src/components/Header/Header.module.css
 .navigationTypeSignbar {
   composes: navigation;
 
-=======
-.header__navigation_type_signbar {
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c:src/components/Header/Header.css
   position: relative;
 
   max-width: max-content;
