@@ -12,11 +12,13 @@ function CustomButton({
   disabled,
   children,
 }) {
+  const finalClassName = `custom-button ${
+    isClassicStyle ? 'custom-button_style_classic' : ''
+  } ${className}`;
+
   return (
     <button
-      className={`custom-button ${
-        isClassicStyle ? 'custom-button_style_classic' : ''
-      } ${className}`}
+      className={finalClassName}
       type={isSubmitButton ? 'submit' : 'button'}
       onClick={onClick}
       aria-label={ariaLabel}
@@ -42,7 +44,7 @@ CustomButton.defaultProps = {
   isSubmitButton: false,
   isClassicStyle: false,
   onClick: () => {},
-  ariaLabel: '',
+  ariaLabel: '' || null,
   disabled: false,
   children: '' || null,
 };

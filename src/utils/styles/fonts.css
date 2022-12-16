@@ -22,6 +22,17 @@
 
 @font-face {
   font-family: 'Inter';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('Inter-Black'),
+    url(../../vendor/fonts/Inter-SemiBold.woff2) format("woff2"),
+    url(../../vendor/fonts/Inter-SemiBold.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
   font-weight: 900;
   font-style: normal;
   font-display: swap;

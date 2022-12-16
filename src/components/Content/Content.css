@@ -1,3 +1,17 @@
 .content {
   position: relative;
+
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: auto;
+}
+
+.content_position_standart {
+  margin-top: calc(52px + 20px);
+}
+
+@media screen and (min-width: 900px) {
+  .content_position_standart {
+    margin-top: calc(57px + 20px);
+  }
 }

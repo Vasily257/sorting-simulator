@@ -1,4 +1,4 @@
-.header-menu-button {
+.main {
   position: relative;
 
   width: 24px;
@@ -11,14 +11,14 @@
   border-bottom: 3px solid black;
 }
 
-.header-menu-button:hover {
+.main:hover {
   transition: opacity 0.1s, border-top 0.25s, border-bottom 0.25s;
 
   opacity: 0.7;
 }
 
-.header-menu-button::before,
-.header-menu-button::after {
+.main::before,
+.main::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,25 +32,25 @@
   background-color: black;
 }
 
-.header-menu-button::before {
+.main::before {
   transform: translate(0, 4px);
 }
 
-.header-menu-button::after {
+.main::after {
   transform: translate(0, 11px);
 }
 
-.header-menu-button_opened {
+.mainOpened {
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
 }
 
-.header-menu-button_opened::before {
+.mainOpened::before {
   transition: transform 0.5s;
   transform: rotate(45deg) translate(5px, 5px);
 }
 
-.header-menu-button_opened::after {
+.mainOpened::after {
   transition: transform 0.5s;
   transform: rotate(-45deg) translate(-5px, 5px);
 }

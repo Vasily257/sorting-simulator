@@ -1,0 +1,136 @@
+.content {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.year {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+.year:last-child {
+  margin-bottom: 0;
+}
+
+.year::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+
+  width: 1px;
+  height: 20px;
+
+  content: '';
+
+  background-color: var(--green-color);
+}
+
+.year:last-child::after {
+  content: none;
+}
+
+.yearButton {
+  position: relative;
+
+  display: block;
+
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+
+  border-color: var(--green-color);
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.yearButton:hover {
+  background-color: #ffffff;
+}
+
+.yearButtonActive {
+  composes: yearButton;
+
+  color: #ffffff;
+  background-color: var(--green-color);
+}
+
+.yearButtonActive:hover {
+  background-color: var(--green-color);
+}
+
+.yearButtonText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.facts {
+  margin-left: 20px;
+}
+
+.fact {
+  margin-bottom: 10px;
+}
+
+.fact:last-child {
+  margin-bottom: 0;
+}
+
+.factText {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .years {
+    flex-direction: row;
+  }
+
+  .year {
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+
+  .year:last-child {
+    margin-right: 0;
+  }
+
+  .year::after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+
+    width: 25px;
+    height: 1px;
+  }
+
+  .facts {
+    margin-top: 25px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .year {
+    margin-right: 30px;
+  }
+
+  .year::after {
+    width: 30px;
+  }
+
+  .yearButton {
+    width: 60px;
+    height: 60px;
+  }
+}
