@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import useScreenView from '../../hooks/useScreenView';
 import useHeader from '../../hooks/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
@@ -8,13 +9,20 @@ import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const { isDesktop } = useScreenView();
 
-  const { getComponentStatuses, getComplexClassNames } = useHeader({ setIsMenuOpened, styles });
+  const { getComponentStatuses, getComplexClassNames } = useHeader({ styles });
   const { isMenuButtonShown, isNavbarShown, isSignBarShown } = getComponentStatuses(isMenuOpened);
   const { headerClassName, navigationClassName } = getComplexClassNames(isMenuOpened);
 
   const { logo } = styles;
   const { logoAltText } = TEXT_CONTENT.HEADER;
+
+  useEffect(() => {
+    if (isDesktop) {
+      setIsMenuOpened(false);
+    }
+  }, [isDesktop, setIsMenuOpened]);
 
   return (
     <header className={headerClassName}>

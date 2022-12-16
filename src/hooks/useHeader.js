@@ -1,13 +1,13 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import LoggedInContext from '../contexts/LoggedInContext';
 import useScreenView from './useScreenView';
 
-function useHeader({ setIsMenuOpened, styles }) {
+function useHeader({ styles }) {
   const { isLoggedIn } = useContext(LoggedInContext);
   const { isDesktop, isTablet, isMobile } = useScreenView();
 
   const {
-    main, mainPositionStandart, mainOverlay, navigation, navigationTypeSignbar,
+    basePositionStandart, baseOverlay, navigation, navigationTypeSignbar,
   } = styles;
 
   function getComponentStatuses(isMenuOpened) {
@@ -19,18 +19,11 @@ function useHeader({ setIsMenuOpened, styles }) {
   }
 
   function getComplexClassNames(isMenuOpened) {
-    const mainHeaderClassName = `${main} ${mainPositionStandart} `;
-    const headerClassName = `${mainHeaderClassName} ${isMenuOpened ? mainOverlay : ''}`;
-    const navigationClassName = `${navigation} ${!isLoggedIn ? navigationTypeSignbar : ''} `;
+    const headerClassName = isMenuOpened ? baseOverlay : basePositionStandart;
+    const navigationClassName = !isLoggedIn ? navigationTypeSignbar : navigation;
 
     return { headerClassName, navigationClassName };
   }
-
-  useEffect(() => {
-    if (isDesktop) {
-      setIsMenuOpened(false);
-    }
-  }, [isDesktop, setIsMenuOpened]);
 
   return {
     getComplexClassNames,
