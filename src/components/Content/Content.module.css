@@ -1,6 +1,5 @@
 .base {
   position: relative;
-<<<<<<< HEAD:src/components/Content/Content.module.css
 
   display: grid;
   row-gap: 20px;
@@ -18,6 +17,3 @@
     margin-top: calc(57px + 20px);
   }
 }
-=======
-}
->>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c:src/components/Content/Content.css
