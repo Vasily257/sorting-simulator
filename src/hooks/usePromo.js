@@ -1,4 +1,4 @@
-import useScreenView from '../useScreenView';
+import useScreenView from './useScreenView';
 
 function usePromo({ styles }) {
   const { isTablet } = useScreenView();

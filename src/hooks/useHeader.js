@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
-import LoggedInContext from '../../contexts/LoggedInContext';
-import useScreenView from '../useScreenView';
+import LoggedInContext from '../contexts/LoggedInContext';
+import useScreenView from './useScreenView';
 
 function useHeader({ setIsMenuOpened, styles }) {
   const { isLoggedIn } = useContext(LoggedInContext);

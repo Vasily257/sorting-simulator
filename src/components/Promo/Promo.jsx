@@ -1,5 +1,5 @@
 import React from 'react';
-import usePromo from '../../hooks/for-components/usePromo';
+import usePromo from '../../hooks/usePromo';
 import Section from '../Section/Section';
 import CustomButton from '../CustomButton/CustomButton';
 import styles from './Promo.module.css';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CustomButton from '../CustomButton/CustomButton';
-import useHistory from '../../hooks/for-components/useHistory';
+import useHistory from '../../hooks/useHistory';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function HistoryYearItems({ selectedId, setSelectedID, styles }) {
