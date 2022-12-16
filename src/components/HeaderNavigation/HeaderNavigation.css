@@ -8,7 +8,7 @@
   }
 }
 
-.main {
+.header-navigation {
   position: relative;
 
   animation-name: smooth-appearance;
@@ -18,19 +18,27 @@
   background-color: #ffffff;
 }
 
-.mainTypeSignbar {
+.header-navigation_type_signbar {
   background-color: transparent;
 }
 
-.list {
+.header-navigation__list {
+  display: flex;
   align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
-.listTypeSignbar {
+.header-navigation__list_type_signbar {
   flex-direction: row;
 }
 
-.item {
+.header-navigation__item {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -38,28 +46,28 @@
   margin-top: 20px;
 }
 
-.item:last-child {
+.header-navigation__item:last-child {
   margin-top: 60px;
 }
 
-.itemTypeSignbar {
+.header-navigation__item_type_signbar {
   margin-top: 0;
   margin-right: 10px;
 }
 
-.itemTypeSignbar:last-child {
+.header-navigation__item_type_signbar:last-child {
   margin-top: 0;
   margin-right: 0;
 }
 
-.link {
+.header-navigation__link {
   position: relative;
 
   font-size: 18px;
   font-weight: 500;
 }
 
-.linkActive::after {
+.header-navigation__link_active::after {
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -73,30 +81,30 @@
   border-bottom: 1px solid var(--green-color);
 }
 
-.linkTypeSignbar {
+.header-navigation__link_type_signbar {
   font-size: 12px;
 }
 
 @media screen and (min-width: 900px) {
-  .main {
+  .header-navigation {
     background-color: transparent;
   }
 
-  .list {
+  .header-navigation__list {
     flex-direction: row;
   }
 
-  .item {
+  .header-navigation__item {
     margin-top: 0;
     margin-right: 10px;
   }
 
-  .item:last-child {
+  .header-navigation__item:last-child {
     margin-top: 0;
     margin-right: 0;
   }
 
-  .link {
+  .header-navigation__link {
     font-size: 14px;
   }
 }

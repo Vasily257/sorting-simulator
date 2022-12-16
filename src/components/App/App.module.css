@@ -1,20 +1,29 @@
 .base {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-
+  box-sizing: border-box;
   min-width: 320px;
-  max-width: 900px;
+  max-width: 1100px;
   height: 100vh;
+  padding: 20px 20px;
 
+<<<<<<< HEAD:src/components/App/App.module.css
   color: var(--dark-color);
+=======
+  color: var(--color-dark);
+  background-color: #ffffff;
+>>>>>>> 374447910fbb3593ba986326a9a99bb1393ad46c:src/components/App/App.css
 
   font-family: 'Inter', Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .app {
+    padding: 20px 40px;
+  }
 }
 
 @media screen and (min-width: 900px) {

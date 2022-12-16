@@ -57,7 +57,7 @@ CustomLink.defaultProps = {
   onClick: () => {},
   target: '_blank',
   activeClassName: '',
-  ariaLabel: '' || null,
+  ariaLabel: '',
   children: '' || null,
 };
 
