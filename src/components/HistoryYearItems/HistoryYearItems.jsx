@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import CustomButton from '../CustomButton/CustomButton';
 import useHistory from '../../hooks/useHistory';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
@@ -22,11 +22,5 @@ function HistoryYearItems({ selectedId, setSelectedID, styles }) {
     </li>
   ));
 }
-
-HistoryYearItems.propTypes = {
-  selectedId: PropTypes.number.isRequired,
-  setSelectedID: PropTypes.func.isRequired,
-  styles: PropTypes.objectOf(PropTypes.string),
-};
 
 export default HistoryYearItems;

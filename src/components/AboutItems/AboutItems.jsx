@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function AboutItems({ styles }) {
@@ -13,9 +12,5 @@ function AboutItems({ styles }) {
     </li>
   ));
 }
-
-AboutItems.propTypes = {
-  styles: PropTypes.objectOf(PropTypes.string).isRequired,
-};
 
 export default AboutItems;
