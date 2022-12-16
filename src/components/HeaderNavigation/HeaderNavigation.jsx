@@ -1,101 +1,22 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import Navbar from '../Navbar/Navbar';
+import Signbar from '../Signbar/Signbar';
+import styles from './HeaderNavigation.module.css';
 
-import LoggedInContext from '../../contexts/LoggedInContext';
-import useScreenView from '../../hooks/useScreenView';
-
-import CustomLink from '../CustomLink/CustomLink';
-import ButtonLink from '../ButtonLink/ButtonLink';
-
-import './HeaderNavigation.css';
-
-function HeaderNavigation({ сlassNameFromParent, isMenuOpened }) {
-  const { isLoggedIn } = useContext(LoggedInContext);
-  const { isDesktop, isTablet, isMobile } = useScreenView();
-
-  const isNavbarShown = isDesktop || (isMenuOpened && (isTablet || isMobile));
-
+function HeaderNavigation({ classNameFromParent, isNavbarShown, isSignBarShown }) {
   return (
     <>
-      {isLoggedIn && isNavbarShown && (
-        <nav className={`${сlassNameFromParent} header-navigation`}>
-          <ul className="header-navigation__list">
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Главная
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/simulator"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Тренажёр
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/memos"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Памятки
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <CustomLink
-                path="/catalog"
-                className="header-navigation__link"
-                activeClassName="header-navigation__link_active"
-              >
-                Справочник
-              </CustomLink>
-            </li>
-            <li className="header-navigation__item">
-              <ButtonLink
-                path="/profile"
-                className="header-navigation__link"
-                type="profile"
-                text="Профиль"
-              />
-            </li>
-          </ul>
-        </nav>
-      )}
-      {!isLoggedIn && (
-        <nav className={`${сlassNameFromParent} header-navigation header-navigation_type_signbar`}>
-          <ul className="header-navigation__list header-navigation__list_type_signbar">
-            <li className="header-navigation__item header-navigation__item_type_signbar">
-              <ButtonLink
-                path="/signup"
-                className="header-navigation__link header-navigation__link_type_signbar"
-                type="register"
-                text="Регистрация"
-              />
-            </li>
-            <li className="header-navigation__item header-navigation__item_type_signbar">
-              <ButtonLink
-                path="/signin"
-                className="header-navigation__link header-navigation__link_type_signbar"
-                type="login"
-                text="Вход"
-              />
-            </li>
-          </ul>
-        </nav>
-      )}
+      {isNavbarShown && <Navbar classNameFromParent={classNameFromParent} styles={styles} />}
+      {isSignBarShown && <Signbar classNameFromParent={classNameFromParent} styles={styles} />}
     </>
   );
 }
 
 HeaderNavigation.propTypes = {
-  сlassNameFromParent: PropTypes.string.isRequired,
-  isMenuOpened: PropTypes.bool.isRequired,
+  classNameFromParent: PropTypes.string.isRequired,
+  isNavbarShown: PropTypes.bool.isRequired,
+  isSignBarShown: PropTypes.bool.isRequired,
 };
 
 export default HeaderNavigation;

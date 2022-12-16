@@ -42,7 +42,7 @@ CustomButton.defaultProps = {
   isSubmitType: false,
   isClassicStyle: false,
   onClick: () => {},
-  ariaLabel: '',
+  ariaLabel: '' || null,
   disabled: false,
   children: '' || null,
 };

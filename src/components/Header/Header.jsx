@@ -3,10 +3,9 @@ import useScreenView from '../../hooks/useScreenView';
 import useHeader from '../../hooks/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
-
 import headerLogoUrl from '../../images/header-logo.svg';
-
-import './Header.css';
+import styles from './Header.module.css';
+import TEXT_CONTENT from '../../utils/scripts/text-content';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -26,21 +25,16 @@ function Header() {
   }, [isDesktop, setIsMenuOpened]);
 
   return (
-    <header className={`header ${isMenuOpened ? 'header_overlay' : ''}`}>
-      <img className="header__logo" src={headerLogoUrl} alt="Логотип сайта" />
+    <header className={headerClassName}>
+      <img className={logo} src={headerLogoUrl} alt={logoAltText} />
       <HeaderNavigation
-        сlassNameFromParent={`header__navigation ${
-          !isLoggedIn ? 'header__navigation_type_signbar' : ''
-        } `}
-        isMenuOpened={isMenuOpened}
+        classNameFromParent={navigationClassName}
+        isNavbarShown={isNavbarShown}
+        isSignBarShown={isSignBarShown}
       />
-      <HeaderMenuButton
-        сlassNameFromParent={`header__menu-button ${
-          isMenuOpened ? 'header__menu-button_opened' : ''
-        }`}
-        isMenuOpened={isMenuOpened}
-        setIsMenuOpened={setIsMenuOpened}
-      />
+      {isMenuButtonShown && (
+        <HeaderMenuButton isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
+      )}
     </header>
   );
 }
