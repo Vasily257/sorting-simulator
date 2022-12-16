@@ -3,8 +3,6 @@
   justify-items: center;
   row-gap: 40px;
   grid-template-columns: auto;
-
-  color: var(--dark-color);
 }
 
 .title {
@@ -40,8 +38,6 @@
   padding: 0;
 
   text-align: center;
-
-  color: inherit;
 
   line-height: 1.3;
 }

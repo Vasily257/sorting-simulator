@@ -59,6 +59,5 @@
 .loginActive {
   composes: login;
 
-  color: inherit;
   background-color: transparent;
 }

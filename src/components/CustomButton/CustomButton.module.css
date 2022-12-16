@@ -9,7 +9,6 @@
   transition: background-color 0.5s;
 
   opacity: 1;
-  color: inherit;
   border: none;
   background-color: transparent;
 
@@ -43,7 +42,6 @@
   color: var(--dark-color);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--dark-color);
   border-radius: 1.5em;
 }
 
