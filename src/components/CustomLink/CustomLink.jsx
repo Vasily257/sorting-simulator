@@ -1,35 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Link, NavLink } from 'react-router-dom';
-
-import './CustomLink.css';
+import WebLink from '../WebLink/WebLink';
+import RouterLink from '../RouterLink/RouterLink';
+import RouterNavLink from '../RouterNavLink/RouterNavLink';
+import styles from './CustomLink.module.css';
 
 function CustomLink({
   path, className, activeClassName, onClick, target, ariaLabel, children,
 }) {
   if (path.startsWith('http')) {
     return (
-      <a href={path} className={`custom-link ${className}`} rel="noreferrer" target={target}>
+      <WebLink path={path} className={className} target={target}>
         {children}
-      </a>
+      </WebLink>
     );
   }
+
   if (activeClassName) {
     return (
-      <NavLink
-        to={path}
-        className={({ isActive }) => `custom-link ${className} ${isActive ? activeClassName : ''}`}
+      <RouterNavLink
+        path={path}
+        className={className}
+        activeClassName={activeClassName}
+        styles={styles}
         onClick={onClick}
       >
         {children}
-      </NavLink>
+      </RouterNavLink>
     );
   }
+
   return (
-    <Link to={path} className={`custom-link ${className}`} onClick={onClick} aria-label={ariaLabel}>
+    <RouterLink
+      path={path}
+      className={className}
+      styles={styles}
+      onClick={onClick}
+      ariaLabel={ariaLabel}
+    >
       {children}
-    </Link>
+    </RouterLink>
   );
 }
 

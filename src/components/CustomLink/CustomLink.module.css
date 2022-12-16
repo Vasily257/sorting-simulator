@@ -1,4 +1,4 @@
-.custom-link {
+.base {
   display: block;
 
   cursor: pointer;
@@ -9,17 +9,17 @@
   color: inherit;
 }
 
-.custom-link:hover {
+.base:hover {
   transition: opacity 0.1s;
 
   opacity: 0.7;
 }
 
-.custom-link:focus {
+.base:focus {
   outline: none;
 }
 
-.custom-link:focus-visible {
+.base:focus-visible {
   outline: 3px solid var(--blue-color);
   outline-offset: 3px;
 }
