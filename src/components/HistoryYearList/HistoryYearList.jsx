@@ -12,7 +12,7 @@ function HistoryYearList({ selectedId, setSelectedID, styles }) {
 }
 
 HistoryYearList.propTypes = {
-  selectedId: PropTypes.bool.isRequired,
+  selectedId: PropTypes.number.isRequired,
   setSelectedID: PropTypes.func.isRequired,
   styles: PropTypes.objectOf(PropTypes.string).isRequired,
 };

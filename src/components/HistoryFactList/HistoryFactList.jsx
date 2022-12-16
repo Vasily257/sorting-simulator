@@ -20,7 +20,7 @@ function HistoryFactList({ selectedId, styles }) {
 }
 
 HistoryFactList.propTypes = {
-  selectedId: PropTypes.bool.isRequired,
+  selectedId: PropTypes.number.isRequired,
   styles: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
