@@ -1,25 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import './CustomButton.css';
+import styles from './CustomButton.module.css';
 
 function CustomButton({
   className,
-  isSubmitButton,
+  isSubmitType,
   isClassicStyle,
   onClick,
   ariaLabel,
   disabled,
   children,
 }) {
-  const finalClassName = `custom-button ${
-    isClassicStyle ? 'custom-button_style_classic' : ''
-  } ${className}`;
+  const { base, baseStyleClassic } = styles;
+  const finalClassName = `${isClassicStyle ? baseStyleClassic : base} ${className}`;
 
   return (
     <button
       className={finalClassName}
-      type={isSubmitButton ? 'submit' : 'button'}
+      type={isSubmitType ? 'submit' : 'button'}
       onClick={onClick}
       aria-label={ariaLabel}
       disabled={disabled}
@@ -31,7 +29,7 @@ function CustomButton({
 
 CustomButton.propTypes = {
   className: PropTypes.string,
-  isSubmitButton: PropTypes.bool,
+  isSubmitType: PropTypes.bool,
   isClassicStyle: PropTypes.bool,
   onClick: PropTypes.func,
   ariaLabel: PropTypes.string,
@@ -41,7 +39,7 @@ CustomButton.propTypes = {
 
 CustomButton.defaultProps = {
   className: '',
-  isSubmitButton: false,
+  isSubmitType: false,
   isClassicStyle: false,
   onClick: () => {},
   ariaLabel: '' || null,

@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import './CustomList.css';
+import styles from './CustomList.module.css';
 
 function CustomList({ className, ariaLabel, children }) {
   return (
-    <ul className={`custom-list ${className}`} aria-label={ariaLabel}>
+    <ul className={`${styles.base} ${className}`} aria-label={ariaLabel}>
       {children}
     </ul>
   );

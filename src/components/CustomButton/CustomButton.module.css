@@ -1,4 +1,4 @@
-.custom-button {
+.base {
   display: block;
 
   box-sizing: border-box;
@@ -17,22 +17,24 @@
   line-height: 1;
 }
 
-.custom-button:hover {
+.base:hover {
   transition: background-color 0.1s;
 
   background-color: transparent;
 }
 
-.custom-button:focus {
+.base:focus {
   outline: none;
 }
 
-.custom-button:focus-visible {
+.base:focus-visible {
   outline: 3px solid var(--blue-color);
   outline-offset: 3px;
 }
 
-.custom-button_style_classic {
+.baseStyleClassic {
+  composes: base;
+
   padding: 0.75em 1.5em;
 
   transition: opacity 0.5s;
@@ -45,7 +47,7 @@
   border-radius: 1.5em;
 }
 
-.custom-button_style_classic:hover {
+.baseStyleClassic:hover {
   transition: opacity 0.1s;
 
   opacity: 0.7;
