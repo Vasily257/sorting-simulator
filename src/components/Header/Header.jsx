@@ -3,9 +3,9 @@ import useScreenView from '../../hooks/useScreenView';
 import useHeader from '../../hooks/useHeader';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import HeaderMenuButton from '../HeaderMenuButton/HeaderMenuButton';
-import headerLogoUrl from '../../images/header-logo.svg';
 import styles from './Header.module.css';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
+import headerLogoUrl from '../../images/header-logo.svg';
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);

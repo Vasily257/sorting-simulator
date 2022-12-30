@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CustomButton from '../CustomButton/CustomButton';
 import useHistory from '../../hooks/useHistory';
 import TEXT_CONTENT from '../../utils/scripts/text-content';
