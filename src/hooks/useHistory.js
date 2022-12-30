@@ -7,9 +7,7 @@ function useHistory({ styles }) {
   }
 
   function getFiltredYearFacts({ yearFacts, selectedId }) {
-    const filtredArray = yearFacts.filter(({ id }) => id === selectedId);
-    const filtredYearFacts = filtredArray[0];
-
+    const filtredYearFacts = yearFacts.find(({ id }) => id === selectedId);
     return filtredYearFacts;
   }
 
